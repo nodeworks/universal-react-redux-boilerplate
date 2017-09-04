@@ -1,0 +1,13 @@
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Simple Line Icons
+$simple-line-font-path: '~/simple-line-icons/fonts/';
+@import '~simple-line-icons/scss/simple-line-icons';
+
+// Font Awesome
+$fa-font-path: '~font-awesome/fonts/';
+@import '~font-awesome/scss/font-awesome';
+
+// Global app-wide variables
+@import 'global';
