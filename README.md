@@ -49,7 +49,7 @@ Support For
 -----------
 These features exist but are not setup initially in this boilerplate.
 
-* [Husky](https://github.com/typicode/husky) -- Allows scripts to run defined in package.json when a Git hook is triggered. e.g.:
+* [Husky](https://github.com/typicode/husky) -- Allows scripts that are defined in package.json to run when a Git hook is triggered. e.g.:
 
 ```$javascript
 {
