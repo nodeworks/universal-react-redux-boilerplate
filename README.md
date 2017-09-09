@@ -37,7 +37,7 @@ Testing
 * [Browsersync](https://github.com/BrowserSync/browser-sync) -- Allows syncing browsers for testing
 
 Linting & Type Checking
--------
+-----------------------
 * [ESLint](https://github.com/eslint/eslint) -- Popular linting tool for code cleanliness
 * [Flow](https://github.com/facebook/flow) -- Static typechecker
 
@@ -62,6 +62,75 @@ These features exist but are not setup initially in this boilerplate.
 ```
 
 * [Commitizen](https://github.com/commitizen/cz-cli) -- Standardized commit messages that are customizable
+
+Prerequisites
+-------------
+**You must have the following npm packages installed globally**
+* node & npm
+  * Mac: ```brew install node```
+  * Windows: Download the [Windows Installer](http://nodejs.org/#download) directly from the nodejs.org web site
+  * Debian & Ubuntu: 
+  ```
+  curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+  sudo apt-get install -y nodejs
+  sudo apt-get install -y build-essential
+  ```
+  * RHEL, CentOS and Fedora:
+  ```
+  curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
+  sudo yum -y install nodejs
+  sudo yum install gcc-c++ make
+  ```
+* yarn -- ```npm install -g yarn```
+
+**Suggested packages to install globally**
+* flow-typed: ```npm install -g flow-typed```
+
+Setup
+-----
+1. Clone this repo to your dev environment
+2. Run ```yarn``` on the command line in your project root where you cloned the repo
+3. Copy ```.env.sample``` to ```.env``` in the root of the project
+4. Fill out the ```.env``` file with the required credentials
+
+Commands
+--------
+#### Server
+```yarn start``` -- Starts the dev server 
+  * Dev Server: ```http://localhost:3000```, unless changed
+  * Dev Server with Browsersync: ```http://localhost:3001```, unless changed
+  * Browsersync Dashboard: ```http://localhost:3002```, unless changed
+
+```yarn start:prod``` -- Build and start the prod server
+
+```yarn serve``` -- Start the prod server (without building) -- *warning: must have already been built!*
+
+```yarn prod``` -- Start the prod server using PM2 (without building) -- *warning: must have already been built!*
+
+#### Build & Compile
+```yarn build``` -- Build the 3 environments (client, server, node)
+
+```yarn build:client``` -- Build just the client environment
+
+```yarn build:server``` -- Build just the server environment
+
+```yarn build:node``` -- Build just thee node environment
+
+#### Testing & Linting
+```yarn test``` -- Run the Mocha/Chai/Enzyme tests
+
+```yarn analyze``` -- Run flow checking
+
+```yarn lint``` -- Run eslint
+
+```yarn lint:fix``` -- Run eslint and automatically fix what it can
+
+```yarn suite``` -- Run tests, linting, and analyzing all at once
+
+```yarn build-storybook``` -- Builds Storybook. This needs to be done before trying to run Storybook for the first time
+
+```yarn storybook``` -- Run storybook (make sure to run build-storybook first if you haven't done it yet)
+  * Storybook server: ```http://localhost:9001```, unless changed
 
 #### *Special Thanks*
 
