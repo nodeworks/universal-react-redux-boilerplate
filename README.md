@@ -89,7 +89,7 @@ Prerequisites
 Setup
 -----
 1. Clone this repo to your dev environment
-2. Run ```yarn``` on the command line in your project root where you cloned the repo
+2. Run ```yarn``` on the command line in your project root where you cloned the repo to install the required packages
 3. Copy ```.env.sample``` to ```.env``` in the root of the project
 4. Fill out the ```.env``` file with the required credentials
 
