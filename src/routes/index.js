@@ -6,10 +6,10 @@ export default {
   SUBPAGE: {
     path: '/subpage',
     thunk: (dispatch: Function, getState: Function) => {
-      let { title } = getState()
+      const { title } = getState()
       dispatch({ type: 'HOME', payload: { title } })
     },
     component: 'Subpage'
   },
-  LOGIN: '/login',
+  LOGIN: '/login'
 }

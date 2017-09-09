@@ -1,19 +1,18 @@
 /* @flow */
 import React, { Component } from 'react'
-import './styles.scss'
 import { Container } from 'reactstrap'
-
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
+import './styles.scss'
 
 type Props = {
   children: any
 }
 
-class PageLayout extends Component {
+class PageLayout extends Component<Props> { // eslint-disable-line
   props: Props
 
-  render () {
+  render() {
     return (
       <div className='app'>
         <Container>

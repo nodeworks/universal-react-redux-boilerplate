@@ -3,6 +3,7 @@ const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const DotenvPlugin = require('webpack-dotenv-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const res = p => path.resolve(__dirname, p)
 
@@ -23,13 +24,7 @@ const externals = fs
     return externals
   }, {})
 
-const extractStyles = new ExtractTextPlugin({
-  filename: 'styles/[name].css',
-  allChunks: true,
-  disable: false,
-})
-
-var fonts = []
+const fonts = []
 
 ;[
   ['woff', 'application/font-woff'],
@@ -38,25 +33,24 @@ var fonts = []
   ['ttf', 'application/octet-stream'],
   ['eot', 'application/vnd.ms-fontobject'],
   ['svg', 'image/svg+xml']
-].forEach((font) => {
+].forEach(font => {
   const extension = font[0]
   const mimetype = font[1]
 
   fonts.push({
-    test    : new RegExp(`\\.${extension}$`),
-    loader  : 'url-loader',
-    options : {
-      name  : 'fonts/[name].[ext]',
-      limit : 10000,
-      mimetype,
-    },
+    test: new RegExp(`\\.${extension}$`),
+    loader: 'url-loader',
+    options: {
+      name: 'fonts/[name].[ext]',
+      limit: 10000,
+      mimetype
+    }
   })
 })
 
 module.exports = {
   name: 'server',
   target: 'node',
-  // devtool: 'source-map',
   devtool: 'eval',
   entry: ['babel-polyfill', 'fetch-everywhere', res('../server/render.js')],
   externals,
@@ -74,36 +68,36 @@ module.exports = {
         use: 'babel-loader'
       },
       {
-        test: /\.(sass|scss)$/,
-        loader: extractStyles.extract({
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
             {
               loader: 'css-loader',
               options: {
-                sourceMap: false,
+                sourceMap: true,
                 minimize: {
                   autoprefixer: {
                     add: true,
                     remove: true,
-                    browsers: ['last 2 versions'],
+                    browsers: ['last 2 versions']
                   },
                   discardComments: {
-                    removeAll : true,
+                    removeAll: true
                   },
                   discardUnused: false,
                   mergeIdents: false,
                   reduceIdents: false,
                   safe: true,
-                  sourcemap: false,
-                },
-              },
+                  sourceMap: true
+                }
+              }
             },
             {
               loader: 'sass-loader',
               options: {
-                sourceMap: false
-              },
+                sourceMap: true
+              }
             }
           ]
         })
@@ -118,7 +112,6 @@ module.exports = {
     new webpack.optimize.LimitChunkCountPlugin({
       maxChunks: 1
     }),
-
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('development')
@@ -128,6 +121,15 @@ module.exports = {
       sample: './.env.sample',
       path: './.env'
     }),
-    extractStyles
+    new ExtractTextPlugin({
+      filename: 'styles/[name].css',
+      allChunks: true,
+      disable: false
+    }),
+    new CopyWebpackPlugin([
+      { from: 'public' }
+    ], {
+      copyUnmodified: true
+    })
   ]
 }

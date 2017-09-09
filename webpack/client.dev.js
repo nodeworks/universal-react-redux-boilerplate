@@ -5,15 +5,10 @@ const AutoDllPlugin = require('autodll-webpack-plugin')
 const ExtractCssChunks = require('extract-css-chunks-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const DotenvPlugin = require('webpack-dotenv-plugin')
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
-const extractStyles = new ExtractTextPlugin({
-  filename: 'styles/[name].css',
-  allChunks: true,
-  disable: false,
-})
-
-var fonts = []
-
+let fonts = []
 ;[
   ['woff', 'application/font-woff'],
   ['woff2', 'application/font-woff2'],
@@ -21,26 +16,25 @@ var fonts = []
   ['ttf', 'application/octet-stream'],
   ['eot', 'application/vnd.ms-fontobject'],
   ['svg', 'image/svg+xml']
-].forEach((font) => {
+].forEach(font => {
   const extension = font[0]
   const mimetype = font[1]
 
   fonts.push({
-    test    : new RegExp(`\\.${extension}$`),
-    loader  : 'url-loader',
-    options : {
-      name  : 'fonts/[name].[ext]',
-      limit : 10000,
-      mimetype,
-    },
+    test: new RegExp(`\\.${extension}$`),
+    loader: 'url-loader',
+    options: {
+      name: 'fonts/[name].[ext]',
+      limit: 10000,
+      mimetype
+    }
   })
 })
 
 module.exports = {
   name: 'client',
   target: 'web',
-  // devtool: 'source-map',
-  devtool: 'eval',
+  devtool: 'source-map',
   entry: [
     'babel-polyfill',
     'fetch-everywhere',
@@ -51,7 +45,7 @@ module.exports = {
   output: {
     filename: '[name].js',
     chunkFilename: '[name].js',
-    path: path.resolve(__dirname, '../buildClient'),
+    path: path.resolve(__dirname, '../client'),
     publicPath: '/static/'
   },
   module: {
@@ -62,36 +56,36 @@ module.exports = {
         use: 'babel-loader'
       },
       {
-        test: /\.(sass|scss)$/,
-        loader: extractStyles.extract({
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
             {
               loader: 'css-loader',
               options: {
-                sourceMap: false,
+                sourceMap: true,
                 minimize: {
                   autoprefixer: {
                     add: true,
                     remove: true,
-                    browsers: ['last 2 versions'],
+                    browsers: ['last 2 versions']
                   },
                   discardComments: {
-                    removeAll : true,
+                    removeAll: true
                   },
                   discardUnused: false,
                   mergeIdents: false,
                   reduceIdents: false,
                   safe: true,
-                  sourcemap: false,
-                },
-              },
+                  sourceMap: true
+                }
+              }
             },
             {
               loader: 'sass-loader',
               options: {
-                sourceMap: false
-              },
+                sourceMap: true
+              }
             }
           ]
         })
@@ -118,6 +112,20 @@ module.exports = {
         NODE_ENV: JSON.stringify('development')
       }
     }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        screw_ie8: true,
+        warnings: false
+      },
+      mangle: {
+        screw_ie8: true
+      },
+      output: {
+        screw_ie8: true,
+        comments: false
+      },
+      sourceMap: true
+    }),
     new AutoDllPlugin({
       context: path.join(__dirname, '..'),
       filename: '[name].js',
@@ -141,6 +149,26 @@ module.exports = {
       sample: './.env.sample',
       path: './.env'
     }),
-    extractStyles
+    new BrowserSyncPlugin(
+      {
+        open: false,
+        host: 'localhost',
+        port: 3001,
+        proxy: 'http://localhost:3000/'
+      },
+      {
+        reload: false
+      }
+    ),
+    new ExtractTextPlugin({
+      filename: 'styles/[name].css',
+      allChunks: true,
+      disable: false
+    }),
+    new CopyWebpackPlugin([
+      { from: 'public' }
+    ], {
+      copyUnmodified: true
+    })
   ]
 }

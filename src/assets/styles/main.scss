@@ -9,5 +9,8 @@ $simple-line-font-path: '~/simple-line-icons/fonts/';
 $fa-font-path: '~font-awesome/fonts/';
 @import '~font-awesome/scss/font-awesome';
 
+// React Redux Toastr
+@import '~react-redux-toastr/src/styles/index';
+
 // Global app-wide variables
 @import 'global';

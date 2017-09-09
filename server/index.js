@@ -1,5 +1,6 @@
 import 'babel-polyfill'
 import express from 'express'
+import compression from 'compression'
 import cookieParser from 'cookie-parser'
 import webpack from 'webpack'
 import webpackDevMiddleware from 'webpack-dev-middleware'
@@ -9,10 +10,12 @@ import clientConfig from '../webpack/client.dev'
 import serverConfig from '../webpack/server.dev'
 import { findVideos, findVideo } from './api'
 
-const DEV = process.env.NODE_ENV === 'development'
+const DEV = process.env.NODE_ENV === 'development' // eslint-disable-line
 const publicPath = clientConfig.output.publicPath
 const outputPath = clientConfig.output.path
 const app = express()
+
+app.use(compression())
 
 // JWTOKEN COOKIE - in a real app obviously you set this after signup/login:
 
@@ -60,13 +63,13 @@ if (DEV) {
   )
 }
 else {
-  const clientStats = require('../buildClient/stats.json') // eslint-disable-line import/no-unresolved
-  const serverRender = require('../dist/main.js').default // eslint-disable-line import/no-unresolved
+  const clientStats = require('../client/stats.json') // eslint-disable-line
+  const serverRender = require('../dist/main.js').default // eslint-disable-line
 
   app.use(publicPath, express.static(outputPath))
   app.use(serverRender({ clientStats, outputPath }))
 }
 
 app.listen(3000, () => {
-  console.log('Listening @ http://localhost:3000/')
+  console.log('Listening @ http://localhost:3000/') // eslint-disable-line no-console
 })

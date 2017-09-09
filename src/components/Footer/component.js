@@ -1,6 +1,7 @@
 /* @flow */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import './styles.scss'
 
 type Props = {
   siteTitle: string
@@ -10,20 +11,20 @@ type State = {
   year: number
 }
 
-class Footer extends Component {
+class Footer extends Component<Props, State> {
   props: Props
   state: State
 
-  constructor (props: Props) {
+  constructor(props: Props) {
     super(props)
 
-    let date = new Date()
+    const date = new Date()
     this.state = {
       year: date.getFullYear()
     }
   }
 
-  render () {
+  render() {
     return (
       <footer className='app-footer'>
         {this.props.siteTitle} &copy; {this.state.year} Rob Lee
@@ -32,8 +33,6 @@ class Footer extends Component {
   }
 }
 
-export default connect((state) => {
-  return {
-    siteTitle: state.app.title
-  }
-})(Footer)
+export default connect(state => ({
+  siteTitle: state.app.title
+}))(Footer)

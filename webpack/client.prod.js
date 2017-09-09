@@ -5,15 +5,15 @@ const StatsPlugin = require('stats-webpack-plugin')
 const AutoDllPlugin = require('autodll-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const DotenvPlugin = require('webpack-dotenv-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const extractStyles = new ExtractTextPlugin({
   filename: 'styles/[name].css',
   allChunks: true,
-  disable: false,
+  disable: false
 })
 
-var fonts = []
-
+const fonts = []
 ;[
   ['woff', 'application/font-woff'],
   ['woff2', 'application/font-woff2'],
@@ -21,18 +21,18 @@ var fonts = []
   ['ttf', 'application/octet-stream'],
   ['eot', 'application/vnd.ms-fontobject'],
   ['svg', 'image/svg+xml']
-].forEach((font) => {
+].forEach(font => {
   const extension = font[0]
   const mimetype = font[1]
 
   fonts.push({
-    test    : new RegExp(`\\.${extension}$`),
-    loader  : 'url-loader',
-    options : {
-      name  : 'fonts/[name].[ext]',
-      limit : 10000,
-      mimetype,
-    },
+    test: new RegExp(`\\.${extension}$`),
+    loader: 'url-loader',
+    options: {
+      name: 'fonts/[name].[ext]',
+      limit: 10000,
+      mimetype
+    }
   })
 })
 
@@ -48,7 +48,7 @@ module.exports = {
   output: {
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].js',
-    path: path.resolve(__dirname, '../buildClient'),
+    path: path.resolve(__dirname, '../client'),
     publicPath: '/static/'
   },
   module: {
@@ -71,24 +71,24 @@ module.exports = {
                   autoprefixer: {
                     add: true,
                     remove: true,
-                    browsers: ['last 2 versions'],
+                    browsers: ['last 2 versions']
                   },
                   discardComments: {
-                    removeAll : true,
+                    removeAll: true
                   },
                   discardUnused: false,
                   mergeIdents: false,
                   reduceIdents: false,
                   safe: true,
-                  sourcemap: false,
-                },
-              },
+                  sourcemap: false
+                }
+              }
             },
             {
               loader: 'sass-loader',
               options: {
                 sourceMap: false
-              },
+              }
             }
           ]
         })
@@ -151,6 +151,11 @@ module.exports = {
       sample: './.env.sample',
       path: './.env'
     }),
-    extractStyles
+    extractStyles,
+    new CopyWebpackPlugin([
+      { from: 'public' }
+    ], {
+      copyUnmodified: true
+    })
   ]
 }

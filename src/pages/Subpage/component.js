@@ -1,12 +1,8 @@
 /* @flow */
-import React, { Component } from 'react'
+import React from 'react'
 
-class Subpage extends Component {
-  render () {
-    return (
-      <h1>Subpage</h1>
-    )
-  }
-}
+const Subpage = () => (
+  <h1>Subpage</h1>
+)
 
 export default Subpage

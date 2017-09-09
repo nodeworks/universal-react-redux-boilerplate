@@ -1,6 +1,6 @@
 import React from 'react'
 
 export default error =>
-  <div>
+  (<div>
     ERROR: {error.message}
-  </div>
+  </div>)

@@ -3,6 +3,7 @@ const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const DotenvPlugin = require('webpack-dotenv-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const res = p => path.resolve(__dirname, p)
 
@@ -26,10 +27,10 @@ const externals = fs
 const extractStyles = new ExtractTextPlugin({
   filename: 'styles/[name].css',
   allChunks: true,
-  disable: false,
+  disable: false
 })
 
-var fonts = []
+const fonts = []
 
 ;[
   ['woff', 'application/font-woff'],
@@ -38,18 +39,18 @@ var fonts = []
   ['ttf', 'application/octet-stream'],
   ['eot', 'application/vnd.ms-fontobject'],
   ['svg', 'image/svg+xml']
-].forEach((font) => {
+].forEach(font => {
   const extension = font[0]
   const mimetype = font[1]
 
   fonts.push({
-    test    : new RegExp(`\\.${extension}$`),
-    loader  : 'url-loader',
-    options : {
-      name  : 'fonts/[name].[ext]',
-      limit : 10000,
-      mimetype,
-    },
+    test: new RegExp(`\\.${extension}$`),
+    loader: 'url-loader',
+    options: {
+      name: 'fonts/[name].[ext]',
+      limit: 10000,
+      mimetype
+    }
   })
 })
 
@@ -84,24 +85,24 @@ module.exports = {
                   autoprefixer: {
                     add: true,
                     remove: true,
-                    browsers: ['last 2 versions'],
+                    browsers: ['last 2 versions']
                   },
                   discardComments: {
-                    removeAll : true,
+                    removeAll: true
                   },
                   discardUnused: false,
                   mergeIdents: false,
                   reduceIdents: false,
                   safe: true,
-                  sourcemap: false,
-                },
-              },
+                  sourcemap: false
+                }
+              }
             },
             {
               loader: 'sass-loader',
               options: {
                 sourceMap: false
-              },
+              }
             }
           ]
         })
@@ -122,10 +123,29 @@ module.exports = {
         NODE_ENV: JSON.stringify('production')
       }
     }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        screw_ie8: true,
+        warnings: false
+      },
+      mangle: {
+        screw_ie8: true
+      },
+      output: {
+        screw_ie8: true,
+        comments: false
+      },
+      sourceMap: true
+    }),
     new DotenvPlugin({
       sample: './.env.sample',
       path: './.env'
     }),
-    extractStyles
+    extractStyles,
+    new CopyWebpackPlugin([
+      { from: 'public' }
+    ], {
+      copyUnmodified: true
+    })
   ]
 }
