@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           name: Install AWS CLI
-          command: 'pip install awscli --upgrade --user'
+          command: 'sudo pip install awscli --upgrade --user'
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
