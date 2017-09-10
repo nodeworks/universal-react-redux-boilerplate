@@ -12,8 +12,6 @@ jobs:
       - run:
           name: Install AWS CLI
           command: 'sudo apt-get install awscli -y'
-      - run:
-          command: 'which aws'
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
@@ -24,11 +22,12 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: yarn test
+      - run: './.circleci/slack.sh' https://hooks.slack.com/services/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
       - deploy:
           name: Deploy to AWS OpsWorks
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-                aws opsworks --region "us-east-1" create-deployment --stack-id ae7b0c94-0237-42d1-bb47-f6f280f0d644 --app-id a46af8b6-4102-4428-8ab5-f360f54adef3 --command "{\"Name\":\"deploy\"}";
+              ./.circleci/opsworks.sh ae7b0c94-0237-42d1-bb47-f6f280f0d644 a46af8b6-4102-4428-8ab5-f360f54adef3
             else
                 echo "Not master branch so not deploying"
             fi
