@@ -12,6 +12,8 @@ jobs:
       - restore_cache:
           key: deps1-{{ .Branch }}-{{ checksum ".circleci/requirements.txt" }}
       - run:
+          command: 'which aws'
+      - run:
           name: Install PIP
           command: 'sudo apt-get install python-pip python-dev build-essential && sudo pip install --upgrade pip && sudo pip install --upgrade virtualenv'
       - run:
