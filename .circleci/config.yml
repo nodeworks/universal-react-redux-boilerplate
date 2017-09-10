@@ -10,6 +10,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install PIP
+          command: 'sudo apt-get install python-pip python-dev build-essential && sudo pip install --upgrade pip'
+      - run:
           name: Install AWS CLI
           command: 'sudo pip install awscli --upgrade --user'
       - restore_cache:
