@@ -10,7 +10,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: deps1-{{ .Branch }}-{{ checksum "pipaws" }}
+          key: deps1-{{ .Branch }}-{{ checksum ".circleci/requirements.txt" }}
       - run:
           command: 'ls -la'
       - run:
@@ -18,9 +18,9 @@ jobs:
           command: 'sudo apt-get install python-pip python-dev build-essential && sudo pip install --upgrade pip && sudo pip install --upgrade virtualenv'
       - run:
           name: Install AWS CLI
-          command: pip install awscli --upgrade --user
+          command: 'pip install -r .circleci/requirements.txt'
       - save_cache:
-          key: deps1-{{ .Branch }}-{{ checksum "pipaws" }}
+          key: deps1-{{ .Branch }}-{{ checksum ".circleci/requirements.txt" }}
           paths:
             - "venv"
       - restore_cache:
