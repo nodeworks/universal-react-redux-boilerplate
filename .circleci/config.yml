@@ -9,18 +9,9 @@ jobs:
           AWS_SECRET_ACCESS_KEY: LpkqSSyPajIdCygZEKxQhOHftVmH+oEfTqKGtmnZ
     steps:
       - checkout
-      - restore_cache:
-          key: deps1-{{ .Branch }}-{{ checksum ".circleci/requirements.txt" }}
-      - run:
-          name: Install PIP
-          command: 'sudo apt-get install python-pip python-dev build-essential && sudo pip install --upgrade pip && sudo pip install --upgrade virtualenv'
       - run:
           name: Install AWS CLI
-          command: 'pip install --user --upgrade -r .circleci/requirements.txt'
-      - save_cache:
-          key: deps1-{{ .Branch }}-{{ checksum ".circleci/requirements.txt" }}
-          paths:
-            - "venv"
+          command: 'sudo apt-get install aws-cli -y'
       - run:
           command: 'which aws'
 #      - restore_cache:
