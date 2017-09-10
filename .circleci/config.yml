@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           name: Install AWS CLI
-          command: 'sudo apt-get install aws-cli -y'
+          command: 'sudo apt-get install awscli -y'
       - run:
           command: 'which aws'
 #      - restore_cache:
