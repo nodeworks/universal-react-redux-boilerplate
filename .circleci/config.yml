@@ -1,20 +1,26 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/repo
     docker:
       - image: circleci/node:7.10
         environment:
           AWS_ACCESS_KEY_ID: AKIAJJOHJYADZDECWBFQ
           AWS_SECRET_ACCESS_KEY: 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
-    working_directory: ~/repo
     steps:
       - checkout
+      - restore_cache:
+          key: deps1-{{ .Branch }}-{{ checksum ".circleci/requirements.txt" }}
       - run:
           name: Install PIP
-          command: 'sudo apt-get install python-pip python-dev build-essential && sudo pip install --upgrade pip'
+          command: 'sudo apt-get install python-pip python-dev build-essential && sudo pip install --upgrade pip && sudo pip install --upgrade virtualenv'
       - run:
           name: Install AWS CLI
-          command: 'sudo pip install awscli --upgrade --user'
+          command: 'pip install --user --upgrade -r .circleci/requirements.txt'
+      - save_cache:
+          key: deps1-{{ .Branch }}-{{ checksum ".circleci/requirements.txt" }}
+          paths:
+            - "venv"
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
