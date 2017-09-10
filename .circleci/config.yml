@@ -10,8 +10,9 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          keys:
-          - deps1-{{ .Branch }}-{{ checksum "pipaws" }}
+          key: deps1-{{ .Branch }}-{{ checksum "pipaws" }}
+      - run:
+          command: 'python3 -V'
       - run:
           name: Install PIP
           command: 'sudo apt-get install python-pip python-dev build-essential && sudo pip install --upgrade pip && sudo pip install --upgrade virtualenv'
