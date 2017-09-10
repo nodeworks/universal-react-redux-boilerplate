@@ -16,7 +16,7 @@ jobs:
           command: 'sudo apt-get install python-pip python-dev build-essential && sudo pip install --upgrade pip && sudo pip install --upgrade virtualenv'
       - run:
           name: Install AWS CLI
-          command: 'pip install -r .circleci/requirements.txt'
+          command: 'pip install --user --upgrade -r .circleci/requirements.txt'
       - save_cache:
           key: deps1-{{ .Branch }}-{{ checksum ".circleci/requirements.txt" }}
           paths:
