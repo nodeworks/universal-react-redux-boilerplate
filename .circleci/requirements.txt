@@ -1,1 +1,2 @@
-awscli
+awscli --install-option="--upgrade" \
+       --install-option="--user"
