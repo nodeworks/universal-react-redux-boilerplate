@@ -23,8 +23,9 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: yarn test
-      - run: './.circleci/slack.sh https://hooks.slack.com/services/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'
+      - run:
+          name: Run Tests, Linting, and Flow
+          command: yarn suite
       - deploy:
           name: Deploy to AWS OpsWorks
           command: |
