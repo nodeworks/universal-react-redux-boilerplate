@@ -132,6 +132,27 @@ Commands
 ```yarn storybook``` -- Run storybook (make sure to run build-storybook first if you haven't done it yet)
   * Storybook server: ```http://localhost:9001```, unless changed
 
+Continuous Integration & Deployment
+--------------
+There is support for CircleCI and AWS OpsWorks out-of-the-box. To setup integration, follow these steps:
+
+#### CircleCI Setup
+1. Login to CircleCI and give permission to access your GitHub Org/Repos if you haven't already
+2. Click on ```Projects``` in the left nav and then click on ```Add Project``` at the top right
+3. Find your repo in the list and click ```Setup Project```
+4. Choose your operating system (most likely Linux)
+5. Leave the version as 2.0, or the default selected
+6. Make sure the correct language for the repo is highlighted
+7. Click ```Start building```
+
+#### AWS OpsWorks Setup *(optional)*
+1. On the CircleCI dashboard, click on ```Projects```
+2. Click the gear icon on the far right of the repo you want to setup
+3. Click ```AWS Permissions``` on the left and enter in your API keys for AWS and save
+4. Click ```Environment Variables``` on the left and click ```Add Variable```
+5. In the pop-up, add ```APP_ID``` for the name and for the value add the OpsWorks App Id. This can be found in the AWS OpsWorks dashboard when you click on ```Apps``` and then click on your app name. The app id is labeled ```OpsWorks ID```
+6. Once that has been added, repeat the same step by clicking ```Add Variable```. For name, enter ```STACK_ID```. For value, you will need to enter your AWS OpsWorks Stack ID. This can be found on the AWS OpsWorks dashboard by click ```Stack``` at the top and then clicking ```Stack Settings```. The Stack ID is labeled ```OpsWorks ID```
+
 #### *Special Thanks*
 
 James Gillmore -- [Redux First Router](https://github.com/faceyspacey/redux-first-router)
