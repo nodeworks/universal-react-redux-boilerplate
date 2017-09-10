@@ -12,14 +12,12 @@ jobs:
       - restore_cache:
           key: deps1-{{ .Branch }}-{{ checksum "pipaws" }}
       - run:
-          command: 'python -V'
-      - run:
           name: Install PIP
           command: 'sudo apt-get install python-pip python-dev build-essential && sudo pip install --upgrade pip && sudo pip install --upgrade virtualenv'
       - run:
           name: Install AWS CLI
           command: |
-            python3 -m venv venv
+            python -m venv venv
             . venv/bin/activate
             pip install awscli --upgrade --user
       - save_cache:
