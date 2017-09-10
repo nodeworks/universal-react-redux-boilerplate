@@ -4,9 +4,6 @@ jobs:
     working_directory: ~/repo
     docker:
       - image: circleci/node:7.10
-        environment:
-          AWS_ACCESS_KEY_ID: AKIAJJOHJYADZDECWBFQ
-          AWS_SECRET_ACCESS_KEY: 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
     steps:
       - checkout
       - run:
@@ -30,7 +27,7 @@ jobs:
           name: Deploy to AWS OpsWorks
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              ./.circleci/opsworks.sh ae7b0c94-0237-42d1-bb47-f6f280f0d644 a46af8b6-4102-4428-8ab5-f360f54adef3
+              ./.circleci/opsworks.sh ${STACK_ID} ${APP_ID}
             else
                 echo "Not master branch so not deploying"
             fi
