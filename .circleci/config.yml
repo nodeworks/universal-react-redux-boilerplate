@@ -9,12 +9,22 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
+      - restore_cache:
+          keys:
+          - deps1-{{ .Branch }}-{{ checksum "pipaws" }}
       - run:
           name: Install PIP
-          command: 'sudo apt-get install python-pip python-dev build-essential && sudo pip install --upgrade pip'
+          command: 'sudo apt-get install python-pip python-dev build-essential && sudo pip install --upgrade pip && sudo pip install --upgrade virtualenv'
       - run:
           name: Install AWS CLI
-          command: 'sudo pip install awscli --upgrade --user'
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install awscli --upgrade --user
+      - save_cache:
+          key: deps1-{{ .Branch }}-{{ checksum "pipaws" }}
+          paths:
+            - "venv"
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
