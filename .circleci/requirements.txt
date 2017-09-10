@@ -1,1 +1,1 @@
-awscli --upgrade --user
+awscli
