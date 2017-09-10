@@ -12,8 +12,6 @@ jobs:
       - restore_cache:
           key: deps1-{{ .Branch }}-{{ checksum ".circleci/requirements.txt" }}
       - run:
-          command: 'sudo which aws'
-      - run:
           name: Install PIP
           command: 'sudo apt-get install python-pip python-dev build-essential && sudo pip install --upgrade pip && sudo pip install --upgrade virtualenv'
       - run:
@@ -23,21 +21,23 @@ jobs:
           key: deps1-{{ .Branch }}-{{ checksum ".circleci/requirements.txt" }}
           paths:
             - "venv"
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          - v1-dependencies-
-      - run: yarn install
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-      - run: yarn test
-      - deploy:
-          name: Deploy to AWS OpsWorks
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-                aws opsworks --region "us-east-1" create-deployment --stack-id ae7b0c94-0237-42d1-bb47-f6f280f0d644 --app-id a46af8b6-4102-4428-8ab5-f360f54adef3 --command "{\"Name\":\"deploy\"}";
-            else
-                echo "Not master branch so not deploying"
-            fi
+      - run:
+          command: 'which aws'
+#      - restore_cache:
+#          keys:
+#          - v1-dependencies-{{ checksum "package.json" }}
+#          - v1-dependencies-
+#      - run: yarn install
+#      - save_cache:
+#          paths:
+#            - node_modules
+#          key: v1-dependencies-{{ checksum "package.json" }}
+#      - run: yarn test
+#      - deploy:
+#          name: Deploy to AWS OpsWorks
+#          command: |
+#            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+#                aws opsworks --region "us-east-1" create-deployment --stack-id ae7b0c94-0237-42d1-bb47-f6f280f0d644 --app-id a46af8b6-4102-4428-8ab5-f360f54adef3 --command "{\"Name\":\"deploy\"}";
+#            else
+#                echo "Not master branch so not deploying"
+#            fi
