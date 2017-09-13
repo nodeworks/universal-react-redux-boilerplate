@@ -8,7 +8,8 @@ jobs:
       - checkout
       - run:
           name: Install AWS CLI
-          command: 'sudo apt-get install awscli -y'
+          command: |
+            sudo apt-get install python-dev && curl -O https://bootstrap.pypa.io/get-pip.py && python get-pip.py --user && echo "export PATH=~/.local/bin:$PATH" >> ~/.bashrc && export PATH=~/.local/bin:$PATH && pip install awscli --upgrade --user
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
@@ -27,7 +28,7 @@ jobs:
           name: Deploy to AWS OpsWorks
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              ./.circleci/opsworks.sh ${STACK_ID} ${APP_ID}
+              export PATH=~/.local/bin:$PATH && aws opsworks --region "us-east-1" create-deployment --stack-id ${STACK_ID} --app-id ${APP_ID} --layer-ids "${LAYER_ID}" --command "{\"Name\":\"deploy\"}";
             else
                 echo "Not master branch so not deploying"
             fi
