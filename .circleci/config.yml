@@ -27,8 +27,10 @@ jobs:
       - deploy:
           name: Deploy to AWS OpsWorks
           command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              export PATH=~/.local/bin:$PATH && aws opsworks --region "us-east-1" create-deployment --stack-id ${STACK_ID} --app-id ${APP_ID} --layer-ids "${LAYER_ID}" --command "{\"Name\":\"deploy\"}";
-            else
-                echo "Not master branch so not deploying"
+            if [ -z ${STACK_ID} ]; then
+              if [ "${CIRCLE_BRANCH}" == "master" ]; then
+                export PATH=~/.local/bin:$PATH && aws opsworks --region "us-east-1" create-deployment --stack-id ${STACK_ID} --app-id ${APP_ID} --layer-ids "${LAYER_ID}" --command "{\"Name\":\"deploy\"}";
+              else
+                  echo "Not master branch so not deploying"
+              fi
             fi
