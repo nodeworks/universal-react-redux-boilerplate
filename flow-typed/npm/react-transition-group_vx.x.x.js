@@ -1,4 +1,4 @@
-// flow-typed signature: 4e2b4968a6e017d51c937c1a90b0f4dd
+// flow-typed signature: 0af9dbe509bf045aceefe9e461625f11
 // flow-typed version: <<STUB>>/react-transition-group_v^2.2.0/flow_v0.54.1
 
 /**
@@ -26,19 +26,19 @@ declare module 'react-transition-group/CSSTransition' {
   declare module.exports: any;
 }
 
-declare module 'react-transition-group/Transition' {
-  declare module.exports: any;
-}
-
-declare module 'react-transition-group/TransitionGroup' {
-  declare module.exports: any;
-}
-
 declare module 'react-transition-group/dist/react-transition-group' {
   declare module.exports: any;
 }
 
 declare module 'react-transition-group/dist/react-transition-group.min' {
+  declare module.exports: any;
+}
+
+declare module 'react-transition-group/Transition' {
+  declare module.exports: any;
+}
+
+declare module 'react-transition-group/TransitionGroup' {
   declare module.exports: any;
 }
 
@@ -58,12 +58,6 @@ declare module 'react-transition-group/utils/SimpleSet' {
 declare module 'react-transition-group/CSSTransition.js' {
   declare module.exports: $Exports<'react-transition-group/CSSTransition'>;
 }
-declare module 'react-transition-group/Transition.js' {
-  declare module.exports: $Exports<'react-transition-group/Transition'>;
-}
-declare module 'react-transition-group/TransitionGroup.js' {
-  declare module.exports: $Exports<'react-transition-group/TransitionGroup'>;
-}
 declare module 'react-transition-group/dist/react-transition-group.js' {
   declare module.exports: $Exports<'react-transition-group/dist/react-transition-group'>;
 }
@@ -75,6 +69,12 @@ declare module 'react-transition-group/index' {
 }
 declare module 'react-transition-group/index.js' {
   declare module.exports: $Exports<'react-transition-group'>;
+}
+declare module 'react-transition-group/Transition.js' {
+  declare module.exports: $Exports<'react-transition-group/Transition'>;
+}
+declare module 'react-transition-group/TransitionGroup.js' {
+  declare module.exports: $Exports<'react-transition-group/TransitionGroup'>;
 }
 declare module 'react-transition-group/utils/ChildMapping.js' {
   declare module.exports: $Exports<'react-transition-group/utils/ChildMapping'>;

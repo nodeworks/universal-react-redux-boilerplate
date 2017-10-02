@@ -1,4 +1,4 @@
-// flow-typed signature: 8bbeee13f9090cc7af661002ab73ac42
+// flow-typed signature: 7fc0cb3caed36cffd38e1b8736bd8e28
 // flow-typed version: <<STUB>>/style-loader_v^0.18.2/flow_v0.54.1
 
 /**
@@ -22,11 +22,11 @@ declare module 'style-loader' {
  * require those files directly. Feel free to delete any files that aren't
  * needed.
  */
-declare module 'style-loader/lib/addStyleUrl' {
+declare module 'style-loader/lib/addStyles' {
   declare module.exports: any;
 }
 
-declare module 'style-loader/lib/addStyles' {
+declare module 'style-loader/lib/addStyleUrl' {
   declare module.exports: any;
 }
 
@@ -49,11 +49,11 @@ declare module 'style-loader/index' {
 declare module 'style-loader/index.js' {
   declare module.exports: $Exports<'style-loader'>;
 }
-declare module 'style-loader/lib/addStyleUrl.js' {
-  declare module.exports: $Exports<'style-loader/lib/addStyleUrl'>;
-}
 declare module 'style-loader/lib/addStyles.js' {
   declare module.exports: $Exports<'style-loader/lib/addStyles'>;
+}
+declare module 'style-loader/lib/addStyleUrl.js' {
+  declare module.exports: $Exports<'style-loader/lib/addStyleUrl'>;
 }
 declare module 'style-loader/lib/urls.js' {
   declare module.exports: $Exports<'style-loader/lib/urls'>;

@@ -1,13 +1,14 @@
+/* @flow */
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension/logOnlyInProduction'
 import { connectRoutes } from 'redux-first-router'
-
+import ReduxThunk from 'redux-thunk'
 import routesMap from '../routes'
 import hooks from '../hooks'
 import * as reducers from '../reducers'
 import * as actionCreators from '../actions'
 
-export default (history, preLoadedState) => {
+export default (history: Object, preLoadedState: Object) => {
   const { reducer, middleware, enhancer, thunk } = connectRoutes(
     history,
     routesMap,
@@ -15,7 +16,7 @@ export default (history, preLoadedState) => {
   )
 
   const rootReducer = combineReducers({ ...reducers, location: reducer })
-  const middlewares = applyMiddleware(middleware)
+  const middlewares = applyMiddleware(middleware, ReduxThunk)
   const enhancers = composeEnhancers(enhancer, middlewares)
   const store = createStore(rootReducer, preLoadedState, enhancers)
 

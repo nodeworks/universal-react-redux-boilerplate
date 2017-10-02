@@ -1,4 +1,4 @@
-// flow-typed signature: 1fe0d40419a056c4f0b6d3fa3bfbd9e5
+// flow-typed signature: ecb4c422608386f47d16837ce1aa0b36
 // flow-typed version: <<STUB>>/history_v^4.6.3/flow_v0.54.1
 
 /**
@@ -22,18 +22,6 @@ declare module 'history' {
  * require those files directly. Feel free to delete any files that aren't
  * needed.
  */
-declare module 'history/DOMUtils' {
-  declare module.exports: any;
-}
-
-declare module 'history/LocationUtils' {
-  declare module.exports: any;
-}
-
-declare module 'history/PathUtils' {
-  declare module.exports: any;
-}
-
 declare module 'history/createBrowserHistory' {
   declare module.exports: any;
 }
@@ -50,15 +38,7 @@ declare module 'history/createTransitionManager' {
   declare module.exports: any;
 }
 
-declare module 'history/es/DOMUtils' {
-  declare module.exports: any;
-}
-
-declare module 'history/es/LocationUtils' {
-  declare module.exports: any;
-}
-
-declare module 'history/es/PathUtils' {
+declare module 'history/DOMUtils' {
   declare module.exports: any;
 }
 
@@ -78,7 +58,27 @@ declare module 'history/es/createTransitionManager' {
   declare module.exports: any;
 }
 
+declare module 'history/es/DOMUtils' {
+  declare module.exports: any;
+}
+
 declare module 'history/es/index' {
+  declare module.exports: any;
+}
+
+declare module 'history/es/LocationUtils' {
+  declare module.exports: any;
+}
+
+declare module 'history/es/PathUtils' {
+  declare module.exports: any;
+}
+
+declare module 'history/LocationUtils' {
+  declare module.exports: any;
+}
+
+declare module 'history/PathUtils' {
   declare module.exports: any;
 }
 
@@ -91,15 +91,6 @@ declare module 'history/umd/history.min' {
 }
 
 // Filename aliases
-declare module 'history/DOMUtils.js' {
-  declare module.exports: $Exports<'history/DOMUtils'>;
-}
-declare module 'history/LocationUtils.js' {
-  declare module.exports: $Exports<'history/LocationUtils'>;
-}
-declare module 'history/PathUtils.js' {
-  declare module.exports: $Exports<'history/PathUtils'>;
-}
 declare module 'history/createBrowserHistory.js' {
   declare module.exports: $Exports<'history/createBrowserHistory'>;
 }
@@ -112,14 +103,8 @@ declare module 'history/createMemoryHistory.js' {
 declare module 'history/createTransitionManager.js' {
   declare module.exports: $Exports<'history/createTransitionManager'>;
 }
-declare module 'history/es/DOMUtils.js' {
-  declare module.exports: $Exports<'history/es/DOMUtils'>;
-}
-declare module 'history/es/LocationUtils.js' {
-  declare module.exports: $Exports<'history/es/LocationUtils'>;
-}
-declare module 'history/es/PathUtils.js' {
-  declare module.exports: $Exports<'history/es/PathUtils'>;
+declare module 'history/DOMUtils.js' {
+  declare module.exports: $Exports<'history/DOMUtils'>;
 }
 declare module 'history/es/createBrowserHistory.js' {
   declare module.exports: $Exports<'history/es/createBrowserHistory'>;
@@ -133,14 +118,29 @@ declare module 'history/es/createMemoryHistory.js' {
 declare module 'history/es/createTransitionManager.js' {
   declare module.exports: $Exports<'history/es/createTransitionManager'>;
 }
+declare module 'history/es/DOMUtils.js' {
+  declare module.exports: $Exports<'history/es/DOMUtils'>;
+}
 declare module 'history/es/index.js' {
   declare module.exports: $Exports<'history/es/index'>;
+}
+declare module 'history/es/LocationUtils.js' {
+  declare module.exports: $Exports<'history/es/LocationUtils'>;
+}
+declare module 'history/es/PathUtils.js' {
+  declare module.exports: $Exports<'history/es/PathUtils'>;
 }
 declare module 'history/index' {
   declare module.exports: $Exports<'history'>;
 }
 declare module 'history/index.js' {
   declare module.exports: $Exports<'history'>;
+}
+declare module 'history/LocationUtils.js' {
+  declare module.exports: $Exports<'history/LocationUtils'>;
+}
+declare module 'history/PathUtils.js' {
+  declare module.exports: $Exports<'history/PathUtils'>;
 }
 declare module 'history/umd/history.js' {
   declare module.exports: $Exports<'history/umd/history'>;

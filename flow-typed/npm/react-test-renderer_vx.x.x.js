@@ -1,4 +1,4 @@
-// flow-typed signature: 9299f98dcb3aaa974e5c8338819108ea
+// flow-typed signature: 0aca9286a0d2c1b67ebbc162a69415b7
 // flow-typed version: <<STUB>>/react-test-renderer_v^15.6.1/flow_v0.54.1
 
 /**
@@ -22,7 +22,31 @@ declare module 'react-test-renderer' {
  * require those files directly. Feel free to delete any files that aren't
  * needed.
  */
+declare module 'react-test-renderer/lib/accumulate' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/accumulateInto' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/adler32' {
+  declare module.exports: any;
+}
+
 declare module 'react-test-renderer/lib/CallbackQueue' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/canDefineProperty' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/checkReactTypeSpec' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/deprecated' {
   declare module.exports: any;
 }
 
@@ -46,7 +70,35 @@ declare module 'react-test-renderer/lib/EventPropagators' {
   declare module.exports: any;
 }
 
+declare module 'react-test-renderer/lib/flattenChildren' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/forEachAccumulated' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/getHostComponentFromComposite' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/getIteratorFn' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/instantiateReactComponent' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/isTextInputElement' {
+  declare module.exports: any;
+}
+
 declare module 'react-test-renderer/lib/KeyEscapeUtils' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/lowPriorityWarning' {
   declare module.exports: any;
 }
 
@@ -186,6 +238,10 @@ declare module 'react-test-renderer/lib/ReactPriorityLevel' {
   declare module.exports: any;
 }
 
+declare module 'react-test-renderer/lib/reactProdInvariant' {
+  declare module.exports: any;
+}
+
 declare module 'react-test-renderer/lib/ReactPropTypeLocationNames' {
   declare module.exports: any;
 }
@@ -274,71 +330,15 @@ declare module 'react-test-renderer/lib/ResponderTouchHistoryStore' {
   declare module.exports: any;
 }
 
-declare module 'react-test-renderer/lib/SyntheticEvent' {
+declare module 'react-test-renderer/lib/shallow/accumulate' {
   declare module.exports: any;
 }
 
-declare module 'react-test-renderer/lib/TouchHistoryMath' {
+declare module 'react-test-renderer/lib/shallow/accumulateInto' {
   declare module.exports: any;
 }
 
-declare module 'react-test-renderer/lib/Transaction' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/accumulate' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/accumulateInto' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/adler32' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/canDefineProperty' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/checkReactTypeSpec' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/deprecated' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/flattenChildren' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/forEachAccumulated' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/getHostComponentFromComposite' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/getIteratorFn' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/instantiateReactComponent' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/isTextInputElement' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/lowPriorityWarning' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/reactProdInvariant' {
+declare module 'react-test-renderer/lib/shallow/adler32' {
   declare module.exports: any;
 }
 
@@ -354,6 +354,26 @@ declare module 'react-test-renderer/lib/shallow/BeforeInputEventPlugin' {
   declare module.exports: any;
 }
 
+declare module 'react-test-renderer/lib/shallow/CallbackQueue' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/canDefineProperty' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/ChangeEventPlugin' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/checkReactTypeSpec' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/createMicrosoftUnsafeLocalFunction' {
+  declare module.exports: any;
+}
+
 declare module 'react-test-renderer/lib/shallow/CSSProperty' {
   declare module.exports: any;
 }
@@ -362,11 +382,19 @@ declare module 'react-test-renderer/lib/shallow/CSSPropertyOperations' {
   declare module.exports: any;
 }
 
-declare module 'react-test-renderer/lib/shallow/CallbackQueue' {
+declare module 'react-test-renderer/lib/shallow/Danger' {
   declare module.exports: any;
 }
 
-declare module 'react-test-renderer/lib/shallow/ChangeEventPlugin' {
+declare module 'react-test-renderer/lib/shallow/dangerousStyleValue' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/DefaultEventPluginOrder' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/deprecated' {
   declare module.exports: any;
 }
 
@@ -390,15 +418,11 @@ declare module 'react-test-renderer/lib/shallow/DOMPropertyOperations' {
   declare module.exports: any;
 }
 
-declare module 'react-test-renderer/lib/shallow/Danger' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/DefaultEventPluginOrder' {
-  declare module.exports: any;
-}
-
 declare module 'react-test-renderer/lib/shallow/EnterLeaveEventPlugin' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/escapeTextContentForBrowser' {
   declare module.exports: any;
 }
 
@@ -426,7 +450,71 @@ declare module 'react-test-renderer/lib/shallow/FallbackCompositionState' {
   declare module.exports: any;
 }
 
+declare module 'react-test-renderer/lib/shallow/findDOMNode' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/flattenChildren' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/forEachAccumulated' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/getEventCharCode' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/getEventKey' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/getEventModifierState' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/getEventTarget' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/getHostComponentFromComposite' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/getIteratorFn' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/getNodeForCharacterOffset' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/getTextContentAccessor' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/getVendorPrefixedEventName' {
+  declare module.exports: any;
+}
+
 declare module 'react-test-renderer/lib/shallow/HTMLDOMPropertyConfig' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/inputValueTracking' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/instantiateReactComponent' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/isEventSupported' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/isTextInputElement' {
   declare module.exports: any;
 }
 
@@ -438,11 +526,19 @@ declare module 'react-test-renderer/lib/shallow/LinkedValueUtils' {
   declare module.exports: any;
 }
 
+declare module 'react-test-renderer/lib/shallow/lowPriorityWarning' {
+  declare module.exports: any;
+}
+
 declare module 'react-test-renderer/lib/shallow/PluginModuleType' {
   declare module.exports: any;
 }
 
 declare module 'react-test-renderer/lib/shallow/PooledClass' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/quoteAttributeValueForBrowser' {
   declare module.exports: any;
 }
 
@@ -471,6 +567,18 @@ declare module 'react-test-renderer/lib/shallow/ReactCompositeComponent' {
 }
 
 declare module 'react-test-renderer/lib/shallow/ReactCoroutine' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/ReactDebugTool' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/ReactDefaultBatchingStrategy' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/ReactDefaultInjection' {
   declare module.exports: any;
 }
 
@@ -538,11 +646,11 @@ declare module 'react-test-renderer/lib/shallow/ReactDOMServer' {
   declare module.exports: any;
 }
 
-declare module 'react-test-renderer/lib/shallow/ReactDOMTextComponent' {
+declare module 'react-test-renderer/lib/shallow/ReactDOMTextarea' {
   declare module.exports: any;
 }
 
-declare module 'react-test-renderer/lib/shallow/ReactDOMTextarea' {
+declare module 'react-test-renderer/lib/shallow/ReactDOMTextComponent' {
   declare module.exports: any;
 }
 
@@ -551,18 +659,6 @@ declare module 'react-test-renderer/lib/shallow/ReactDOMTreeTraversal' {
 }
 
 declare module 'react-test-renderer/lib/shallow/ReactDOMUnknownPropertyHook' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/ReactDebugTool' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/ReactDefaultBatchingStrategy' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/ReactDefaultInjection' {
   declare module.exports: any;
 }
 
@@ -686,6 +782,10 @@ declare module 'react-test-renderer/lib/shallow/ReactPriorityLevel' {
   declare module.exports: any;
 }
 
+declare module 'react-test-renderer/lib/shallow/reactProdInvariant' {
+  declare module.exports: any;
+}
+
 declare module 'react-test-renderer/lib/shallow/ReactPropTypeLocationNames' {
   declare module.exports: any;
 }
@@ -698,11 +798,11 @@ declare module 'react-test-renderer/lib/shallow/ReactPropTypesSecret' {
   declare module.exports: any;
 }
 
-declare module 'react-test-renderer/lib/shallow/ReactReconcileTransaction' {
+declare module 'react-test-renderer/lib/shallow/ReactReconciler' {
   declare module.exports: any;
 }
 
-declare module 'react-test-renderer/lib/shallow/ReactReconciler' {
+declare module 'react-test-renderer/lib/shallow/ReactReconcileTransaction' {
   declare module.exports: any;
 }
 
@@ -782,6 +882,10 @@ declare module 'react-test-renderer/lib/shallow/ReactVersion' {
   declare module.exports: any;
 }
 
+declare module 'react-test-renderer/lib/shallow/renderSubtreeIntoContainer' {
+  declare module.exports: any;
+}
+
 declare module 'react-test-renderer/lib/shallow/ResponderEventPlugin' {
   declare module.exports: any;
 }
@@ -794,15 +898,27 @@ declare module 'react-test-renderer/lib/shallow/ResponderTouchHistoryStore' {
   declare module.exports: any;
 }
 
-declare module 'react-test-renderer/lib/shallow/SVGDOMPropertyConfig' {
-  declare module.exports: any;
-}
-
 declare module 'react-test-renderer/lib/shallow/SelectEventPlugin' {
   declare module.exports: any;
 }
 
+declare module 'react-test-renderer/lib/shallow/setInnerHTML' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/setTextContent' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/shouldUpdateReactComponent' {
+  declare module.exports: any;
+}
+
 declare module 'react-test-renderer/lib/shallow/SimpleEventPlugin' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/shallow/SVGDOMPropertyConfig' {
   declare module.exports: any;
 }
 
@@ -870,138 +986,6 @@ declare module 'react-test-renderer/lib/shallow/Transaction' {
   declare module.exports: any;
 }
 
-declare module 'react-test-renderer/lib/shallow/ViewportMetrics' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/accumulate' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/accumulateInto' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/adler32' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/canDefineProperty' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/checkReactTypeSpec' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/createMicrosoftUnsafeLocalFunction' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/dangerousStyleValue' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/deprecated' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/escapeTextContentForBrowser' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/findDOMNode' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/flattenChildren' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/forEachAccumulated' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/getEventCharCode' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/getEventKey' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/getEventModifierState' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/getEventTarget' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/getHostComponentFromComposite' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/getIteratorFn' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/getNodeForCharacterOffset' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/getTextContentAccessor' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/getVendorPrefixedEventName' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/inputValueTracking' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/instantiateReactComponent' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/isEventSupported' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/isTextInputElement' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/lowPriorityWarning' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/quoteAttributeValueForBrowser' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/reactProdInvariant' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/renderSubtreeIntoContainer' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/setInnerHTML' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/setTextContent' {
-  declare module.exports: any;
-}
-
-declare module 'react-test-renderer/lib/shallow/shouldUpdateReactComponent' {
-  declare module.exports: any;
-}
-
 declare module 'react-test-renderer/lib/shallow/traverseAllChildren' {
   declare module.exports: any;
 }
@@ -1010,7 +994,23 @@ declare module 'react-test-renderer/lib/shallow/validateDOMNesting' {
   declare module.exports: any;
 }
 
+declare module 'react-test-renderer/lib/shallow/ViewportMetrics' {
+  declare module.exports: any;
+}
+
 declare module 'react-test-renderer/lib/shouldUpdateReactComponent' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/SyntheticEvent' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/TouchHistoryMath' {
+  declare module.exports: any;
+}
+
+declare module 'react-test-renderer/lib/Transaction' {
   declare module.exports: any;
 }
 
@@ -1029,8 +1029,26 @@ declare module 'react-test-renderer/index' {
 declare module 'react-test-renderer/index.js' {
   declare module.exports: $Exports<'react-test-renderer'>;
 }
+declare module 'react-test-renderer/lib/accumulate.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/accumulate'>;
+}
+declare module 'react-test-renderer/lib/accumulateInto.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/accumulateInto'>;
+}
+declare module 'react-test-renderer/lib/adler32.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/adler32'>;
+}
 declare module 'react-test-renderer/lib/CallbackQueue.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/CallbackQueue'>;
+}
+declare module 'react-test-renderer/lib/canDefineProperty.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/canDefineProperty'>;
+}
+declare module 'react-test-renderer/lib/checkReactTypeSpec.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/checkReactTypeSpec'>;
+}
+declare module 'react-test-renderer/lib/deprecated.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/deprecated'>;
 }
 declare module 'react-test-renderer/lib/EventConstants.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/EventConstants'>;
@@ -1047,8 +1065,29 @@ declare module 'react-test-renderer/lib/EventPluginUtils.js' {
 declare module 'react-test-renderer/lib/EventPropagators.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/EventPropagators'>;
 }
+declare module 'react-test-renderer/lib/flattenChildren.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/flattenChildren'>;
+}
+declare module 'react-test-renderer/lib/forEachAccumulated.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/forEachAccumulated'>;
+}
+declare module 'react-test-renderer/lib/getHostComponentFromComposite.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/getHostComponentFromComposite'>;
+}
+declare module 'react-test-renderer/lib/getIteratorFn.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/getIteratorFn'>;
+}
+declare module 'react-test-renderer/lib/instantiateReactComponent.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/instantiateReactComponent'>;
+}
+declare module 'react-test-renderer/lib/isTextInputElement.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/isTextInputElement'>;
+}
 declare module 'react-test-renderer/lib/KeyEscapeUtils.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/KeyEscapeUtils'>;
+}
+declare module 'react-test-renderer/lib/lowPriorityWarning.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/lowPriorityWarning'>;
 }
 declare module 'react-test-renderer/lib/PluginModuleType.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/PluginModuleType'>;
@@ -1152,6 +1191,9 @@ declare module 'react-test-renderer/lib/ReactPerf.js' {
 declare module 'react-test-renderer/lib/ReactPriorityLevel.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/ReactPriorityLevel'>;
 }
+declare module 'react-test-renderer/lib/reactProdInvariant.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/reactProdInvariant'>;
+}
 declare module 'react-test-renderer/lib/ReactPropTypeLocationNames.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/ReactPropTypeLocationNames'>;
 }
@@ -1218,56 +1260,14 @@ declare module 'react-test-renderer/lib/ResponderSyntheticEvent.js' {
 declare module 'react-test-renderer/lib/ResponderTouchHistoryStore.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/ResponderTouchHistoryStore'>;
 }
-declare module 'react-test-renderer/lib/SyntheticEvent.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/SyntheticEvent'>;
+declare module 'react-test-renderer/lib/shallow/accumulate.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/accumulate'>;
 }
-declare module 'react-test-renderer/lib/TouchHistoryMath.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/TouchHistoryMath'>;
+declare module 'react-test-renderer/lib/shallow/accumulateInto.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/accumulateInto'>;
 }
-declare module 'react-test-renderer/lib/Transaction.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/Transaction'>;
-}
-declare module 'react-test-renderer/lib/accumulate.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/accumulate'>;
-}
-declare module 'react-test-renderer/lib/accumulateInto.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/accumulateInto'>;
-}
-declare module 'react-test-renderer/lib/adler32.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/adler32'>;
-}
-declare module 'react-test-renderer/lib/canDefineProperty.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/canDefineProperty'>;
-}
-declare module 'react-test-renderer/lib/checkReactTypeSpec.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/checkReactTypeSpec'>;
-}
-declare module 'react-test-renderer/lib/deprecated.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/deprecated'>;
-}
-declare module 'react-test-renderer/lib/flattenChildren.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/flattenChildren'>;
-}
-declare module 'react-test-renderer/lib/forEachAccumulated.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/forEachAccumulated'>;
-}
-declare module 'react-test-renderer/lib/getHostComponentFromComposite.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/getHostComponentFromComposite'>;
-}
-declare module 'react-test-renderer/lib/getIteratorFn.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/getIteratorFn'>;
-}
-declare module 'react-test-renderer/lib/instantiateReactComponent.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/instantiateReactComponent'>;
-}
-declare module 'react-test-renderer/lib/isTextInputElement.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/isTextInputElement'>;
-}
-declare module 'react-test-renderer/lib/lowPriorityWarning.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/lowPriorityWarning'>;
-}
-declare module 'react-test-renderer/lib/reactProdInvariant.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/reactProdInvariant'>;
+declare module 'react-test-renderer/lib/shallow/adler32.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/adler32'>;
 }
 declare module 'react-test-renderer/lib/shallow/ARIADOMPropertyConfig.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/ARIADOMPropertyConfig'>;
@@ -1278,17 +1278,38 @@ declare module 'react-test-renderer/lib/shallow/AutoFocusUtils.js' {
 declare module 'react-test-renderer/lib/shallow/BeforeInputEventPlugin.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/BeforeInputEventPlugin'>;
 }
+declare module 'react-test-renderer/lib/shallow/CallbackQueue.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/CallbackQueue'>;
+}
+declare module 'react-test-renderer/lib/shallow/canDefineProperty.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/canDefineProperty'>;
+}
+declare module 'react-test-renderer/lib/shallow/ChangeEventPlugin.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/ChangeEventPlugin'>;
+}
+declare module 'react-test-renderer/lib/shallow/checkReactTypeSpec.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/checkReactTypeSpec'>;
+}
+declare module 'react-test-renderer/lib/shallow/createMicrosoftUnsafeLocalFunction.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/createMicrosoftUnsafeLocalFunction'>;
+}
 declare module 'react-test-renderer/lib/shallow/CSSProperty.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/CSSProperty'>;
 }
 declare module 'react-test-renderer/lib/shallow/CSSPropertyOperations.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/CSSPropertyOperations'>;
 }
-declare module 'react-test-renderer/lib/shallow/CallbackQueue.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/CallbackQueue'>;
+declare module 'react-test-renderer/lib/shallow/Danger.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/Danger'>;
 }
-declare module 'react-test-renderer/lib/shallow/ChangeEventPlugin.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/ChangeEventPlugin'>;
+declare module 'react-test-renderer/lib/shallow/dangerousStyleValue.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/dangerousStyleValue'>;
+}
+declare module 'react-test-renderer/lib/shallow/DefaultEventPluginOrder.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/DefaultEventPluginOrder'>;
+}
+declare module 'react-test-renderer/lib/shallow/deprecated.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/deprecated'>;
 }
 declare module 'react-test-renderer/lib/shallow/DOMChildrenOperations.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/DOMChildrenOperations'>;
@@ -1305,14 +1326,11 @@ declare module 'react-test-renderer/lib/shallow/DOMProperty.js' {
 declare module 'react-test-renderer/lib/shallow/DOMPropertyOperations.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/DOMPropertyOperations'>;
 }
-declare module 'react-test-renderer/lib/shallow/Danger.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/Danger'>;
-}
-declare module 'react-test-renderer/lib/shallow/DefaultEventPluginOrder.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/DefaultEventPluginOrder'>;
-}
 declare module 'react-test-renderer/lib/shallow/EnterLeaveEventPlugin.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/EnterLeaveEventPlugin'>;
+}
+declare module 'react-test-renderer/lib/shallow/escapeTextContentForBrowser.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/escapeTextContentForBrowser'>;
 }
 declare module 'react-test-renderer/lib/shallow/EventConstants.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/EventConstants'>;
@@ -1332,8 +1350,56 @@ declare module 'react-test-renderer/lib/shallow/EventPropagators.js' {
 declare module 'react-test-renderer/lib/shallow/FallbackCompositionState.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/FallbackCompositionState'>;
 }
+declare module 'react-test-renderer/lib/shallow/findDOMNode.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/findDOMNode'>;
+}
+declare module 'react-test-renderer/lib/shallow/flattenChildren.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/flattenChildren'>;
+}
+declare module 'react-test-renderer/lib/shallow/forEachAccumulated.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/forEachAccumulated'>;
+}
+declare module 'react-test-renderer/lib/shallow/getEventCharCode.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/getEventCharCode'>;
+}
+declare module 'react-test-renderer/lib/shallow/getEventKey.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/getEventKey'>;
+}
+declare module 'react-test-renderer/lib/shallow/getEventModifierState.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/getEventModifierState'>;
+}
+declare module 'react-test-renderer/lib/shallow/getEventTarget.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/getEventTarget'>;
+}
+declare module 'react-test-renderer/lib/shallow/getHostComponentFromComposite.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/getHostComponentFromComposite'>;
+}
+declare module 'react-test-renderer/lib/shallow/getIteratorFn.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/getIteratorFn'>;
+}
+declare module 'react-test-renderer/lib/shallow/getNodeForCharacterOffset.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/getNodeForCharacterOffset'>;
+}
+declare module 'react-test-renderer/lib/shallow/getTextContentAccessor.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/getTextContentAccessor'>;
+}
+declare module 'react-test-renderer/lib/shallow/getVendorPrefixedEventName.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/getVendorPrefixedEventName'>;
+}
 declare module 'react-test-renderer/lib/shallow/HTMLDOMPropertyConfig.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/HTMLDOMPropertyConfig'>;
+}
+declare module 'react-test-renderer/lib/shallow/inputValueTracking.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/inputValueTracking'>;
+}
+declare module 'react-test-renderer/lib/shallow/instantiateReactComponent.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/instantiateReactComponent'>;
+}
+declare module 'react-test-renderer/lib/shallow/isEventSupported.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/isEventSupported'>;
+}
+declare module 'react-test-renderer/lib/shallow/isTextInputElement.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/isTextInputElement'>;
 }
 declare module 'react-test-renderer/lib/shallow/KeyEscapeUtils.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/KeyEscapeUtils'>;
@@ -1341,11 +1407,17 @@ declare module 'react-test-renderer/lib/shallow/KeyEscapeUtils.js' {
 declare module 'react-test-renderer/lib/shallow/LinkedValueUtils.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/LinkedValueUtils'>;
 }
+declare module 'react-test-renderer/lib/shallow/lowPriorityWarning.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/lowPriorityWarning'>;
+}
 declare module 'react-test-renderer/lib/shallow/PluginModuleType.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/PluginModuleType'>;
 }
 declare module 'react-test-renderer/lib/shallow/PooledClass.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/PooledClass'>;
+}
+declare module 'react-test-renderer/lib/shallow/quoteAttributeValueForBrowser.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/quoteAttributeValueForBrowser'>;
 }
 declare module 'react-test-renderer/lib/shallow/ReactBrowserEventEmitter.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/ReactBrowserEventEmitter'>;
@@ -1367,6 +1439,15 @@ declare module 'react-test-renderer/lib/shallow/ReactCompositeComponent.js' {
 }
 declare module 'react-test-renderer/lib/shallow/ReactCoroutine.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/ReactCoroutine'>;
+}
+declare module 'react-test-renderer/lib/shallow/ReactDebugTool.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/ReactDebugTool'>;
+}
+declare module 'react-test-renderer/lib/shallow/ReactDefaultBatchingStrategy.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/ReactDefaultBatchingStrategy'>;
+}
+declare module 'react-test-renderer/lib/shallow/ReactDefaultInjection.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/ReactDefaultInjection'>;
 }
 declare module 'react-test-renderer/lib/shallow/ReactDOM.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/ReactDOM'>;
@@ -1416,26 +1497,17 @@ declare module 'react-test-renderer/lib/shallow/ReactDOMSelection.js' {
 declare module 'react-test-renderer/lib/shallow/ReactDOMServer.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/ReactDOMServer'>;
 }
-declare module 'react-test-renderer/lib/shallow/ReactDOMTextComponent.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/ReactDOMTextComponent'>;
-}
 declare module 'react-test-renderer/lib/shallow/ReactDOMTextarea.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/ReactDOMTextarea'>;
+}
+declare module 'react-test-renderer/lib/shallow/ReactDOMTextComponent.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/ReactDOMTextComponent'>;
 }
 declare module 'react-test-renderer/lib/shallow/ReactDOMTreeTraversal.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/ReactDOMTreeTraversal'>;
 }
 declare module 'react-test-renderer/lib/shallow/ReactDOMUnknownPropertyHook.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/ReactDOMUnknownPropertyHook'>;
-}
-declare module 'react-test-renderer/lib/shallow/ReactDebugTool.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/ReactDebugTool'>;
-}
-declare module 'react-test-renderer/lib/shallow/ReactDefaultBatchingStrategy.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/ReactDefaultBatchingStrategy'>;
-}
-declare module 'react-test-renderer/lib/shallow/ReactDefaultInjection.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/ReactDefaultInjection'>;
 }
 declare module 'react-test-renderer/lib/shallow/ReactElementSymbol.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/ReactElementSymbol'>;
@@ -1527,6 +1599,9 @@ declare module 'react-test-renderer/lib/shallow/ReactPerf.js' {
 declare module 'react-test-renderer/lib/shallow/ReactPriorityLevel.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/ReactPriorityLevel'>;
 }
+declare module 'react-test-renderer/lib/shallow/reactProdInvariant.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/reactProdInvariant'>;
+}
 declare module 'react-test-renderer/lib/shallow/ReactPropTypeLocationNames.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/ReactPropTypeLocationNames'>;
 }
@@ -1536,11 +1611,11 @@ declare module 'react-test-renderer/lib/shallow/ReactPropTypeLocations.js' {
 declare module 'react-test-renderer/lib/shallow/ReactPropTypesSecret.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/ReactPropTypesSecret'>;
 }
-declare module 'react-test-renderer/lib/shallow/ReactReconcileTransaction.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/ReactReconcileTransaction'>;
-}
 declare module 'react-test-renderer/lib/shallow/ReactReconciler.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/ReactReconciler'>;
+}
+declare module 'react-test-renderer/lib/shallow/ReactReconcileTransaction.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/ReactReconcileTransaction'>;
 }
 declare module 'react-test-renderer/lib/shallow/ReactRef.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/ReactRef'>;
@@ -1599,6 +1674,9 @@ declare module 'react-test-renderer/lib/shallow/ReactUpdates.js' {
 declare module 'react-test-renderer/lib/shallow/ReactVersion.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/ReactVersion'>;
 }
+declare module 'react-test-renderer/lib/shallow/renderSubtreeIntoContainer.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/renderSubtreeIntoContainer'>;
+}
 declare module 'react-test-renderer/lib/shallow/ResponderEventPlugin.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/ResponderEventPlugin'>;
 }
@@ -1608,14 +1686,23 @@ declare module 'react-test-renderer/lib/shallow/ResponderSyntheticEvent.js' {
 declare module 'react-test-renderer/lib/shallow/ResponderTouchHistoryStore.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/ResponderTouchHistoryStore'>;
 }
-declare module 'react-test-renderer/lib/shallow/SVGDOMPropertyConfig.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/SVGDOMPropertyConfig'>;
-}
 declare module 'react-test-renderer/lib/shallow/SelectEventPlugin.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/SelectEventPlugin'>;
 }
+declare module 'react-test-renderer/lib/shallow/setInnerHTML.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/setInnerHTML'>;
+}
+declare module 'react-test-renderer/lib/shallow/setTextContent.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/setTextContent'>;
+}
+declare module 'react-test-renderer/lib/shallow/shouldUpdateReactComponent.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/shouldUpdateReactComponent'>;
+}
 declare module 'react-test-renderer/lib/shallow/SimpleEventPlugin.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/SimpleEventPlugin'>;
+}
+declare module 'react-test-renderer/lib/shallow/SVGDOMPropertyConfig.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/SVGDOMPropertyConfig'>;
 }
 declare module 'react-test-renderer/lib/shallow/SyntheticAnimationEvent.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/SyntheticAnimationEvent'>;
@@ -1665,113 +1752,26 @@ declare module 'react-test-renderer/lib/shallow/TouchHistoryMath.js' {
 declare module 'react-test-renderer/lib/shallow/Transaction.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/Transaction'>;
 }
-declare module 'react-test-renderer/lib/shallow/ViewportMetrics.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/ViewportMetrics'>;
-}
-declare module 'react-test-renderer/lib/shallow/accumulate.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/accumulate'>;
-}
-declare module 'react-test-renderer/lib/shallow/accumulateInto.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/accumulateInto'>;
-}
-declare module 'react-test-renderer/lib/shallow/adler32.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/adler32'>;
-}
-declare module 'react-test-renderer/lib/shallow/canDefineProperty.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/canDefineProperty'>;
-}
-declare module 'react-test-renderer/lib/shallow/checkReactTypeSpec.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/checkReactTypeSpec'>;
-}
-declare module 'react-test-renderer/lib/shallow/createMicrosoftUnsafeLocalFunction.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/createMicrosoftUnsafeLocalFunction'>;
-}
-declare module 'react-test-renderer/lib/shallow/dangerousStyleValue.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/dangerousStyleValue'>;
-}
-declare module 'react-test-renderer/lib/shallow/deprecated.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/deprecated'>;
-}
-declare module 'react-test-renderer/lib/shallow/escapeTextContentForBrowser.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/escapeTextContentForBrowser'>;
-}
-declare module 'react-test-renderer/lib/shallow/findDOMNode.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/findDOMNode'>;
-}
-declare module 'react-test-renderer/lib/shallow/flattenChildren.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/flattenChildren'>;
-}
-declare module 'react-test-renderer/lib/shallow/forEachAccumulated.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/forEachAccumulated'>;
-}
-declare module 'react-test-renderer/lib/shallow/getEventCharCode.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/getEventCharCode'>;
-}
-declare module 'react-test-renderer/lib/shallow/getEventKey.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/getEventKey'>;
-}
-declare module 'react-test-renderer/lib/shallow/getEventModifierState.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/getEventModifierState'>;
-}
-declare module 'react-test-renderer/lib/shallow/getEventTarget.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/getEventTarget'>;
-}
-declare module 'react-test-renderer/lib/shallow/getHostComponentFromComposite.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/getHostComponentFromComposite'>;
-}
-declare module 'react-test-renderer/lib/shallow/getIteratorFn.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/getIteratorFn'>;
-}
-declare module 'react-test-renderer/lib/shallow/getNodeForCharacterOffset.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/getNodeForCharacterOffset'>;
-}
-declare module 'react-test-renderer/lib/shallow/getTextContentAccessor.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/getTextContentAccessor'>;
-}
-declare module 'react-test-renderer/lib/shallow/getVendorPrefixedEventName.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/getVendorPrefixedEventName'>;
-}
-declare module 'react-test-renderer/lib/shallow/inputValueTracking.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/inputValueTracking'>;
-}
-declare module 'react-test-renderer/lib/shallow/instantiateReactComponent.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/instantiateReactComponent'>;
-}
-declare module 'react-test-renderer/lib/shallow/isEventSupported.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/isEventSupported'>;
-}
-declare module 'react-test-renderer/lib/shallow/isTextInputElement.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/isTextInputElement'>;
-}
-declare module 'react-test-renderer/lib/shallow/lowPriorityWarning.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/lowPriorityWarning'>;
-}
-declare module 'react-test-renderer/lib/shallow/quoteAttributeValueForBrowser.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/quoteAttributeValueForBrowser'>;
-}
-declare module 'react-test-renderer/lib/shallow/reactProdInvariant.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/reactProdInvariant'>;
-}
-declare module 'react-test-renderer/lib/shallow/renderSubtreeIntoContainer.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/renderSubtreeIntoContainer'>;
-}
-declare module 'react-test-renderer/lib/shallow/setInnerHTML.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/setInnerHTML'>;
-}
-declare module 'react-test-renderer/lib/shallow/setTextContent.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/setTextContent'>;
-}
-declare module 'react-test-renderer/lib/shallow/shouldUpdateReactComponent.js' {
-  declare module.exports: $Exports<'react-test-renderer/lib/shallow/shouldUpdateReactComponent'>;
-}
 declare module 'react-test-renderer/lib/shallow/traverseAllChildren.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/traverseAllChildren'>;
 }
 declare module 'react-test-renderer/lib/shallow/validateDOMNesting.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shallow/validateDOMNesting'>;
 }
+declare module 'react-test-renderer/lib/shallow/ViewportMetrics.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/shallow/ViewportMetrics'>;
+}
 declare module 'react-test-renderer/lib/shouldUpdateReactComponent.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/shouldUpdateReactComponent'>;
+}
+declare module 'react-test-renderer/lib/SyntheticEvent.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/SyntheticEvent'>;
+}
+declare module 'react-test-renderer/lib/TouchHistoryMath.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/TouchHistoryMath'>;
+}
+declare module 'react-test-renderer/lib/Transaction.js' {
+  declare module.exports: $Exports<'react-test-renderer/lib/Transaction'>;
 }
 declare module 'react-test-renderer/lib/traverseAllChildren.js' {
   declare module.exports: $Exports<'react-test-renderer/lib/traverseAllChildren'>;

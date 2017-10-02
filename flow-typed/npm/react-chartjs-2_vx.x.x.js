@@ -1,4 +1,4 @@
-// flow-typed signature: c86942a08c689ac7b39ed58938bd2eda
+// flow-typed signature: 2e5a2cbb053fb7c2def8ebd0ae65532e
 // flow-typed version: <<STUB>>/react-chartjs-2_v^2.6.1/flow_v0.54.1
 
 /**
@@ -42,6 +42,10 @@ declare module 'react-chartjs-2/lib/index' {
   declare module.exports: any;
 }
 
+declare module 'react-chartjs-2/stories/index' {
+  declare module.exports: any;
+}
+
 declare module 'react-chartjs-2/stories/MixLineBar' {
   declare module.exports: any;
 }
@@ -51,10 +55,6 @@ declare module 'react-chartjs-2/stories/StockExamples' {
 }
 
 declare module 'react-chartjs-2/stories/Welcome' {
-  declare module.exports: any;
-}
-
-declare module 'react-chartjs-2/stories/index' {
   declare module.exports: any;
 }
 
@@ -82,6 +82,9 @@ declare module 'react-chartjs-2/gulpfile.js' {
 declare module 'react-chartjs-2/lib/index.js' {
   declare module.exports: $Exports<'react-chartjs-2/lib/index'>;
 }
+declare module 'react-chartjs-2/stories/index.js' {
+  declare module.exports: $Exports<'react-chartjs-2/stories/index'>;
+}
 declare module 'react-chartjs-2/stories/MixLineBar.js' {
   declare module.exports: $Exports<'react-chartjs-2/stories/MixLineBar'>;
 }
@@ -90,9 +93,6 @@ declare module 'react-chartjs-2/stories/StockExamples.js' {
 }
 declare module 'react-chartjs-2/stories/Welcome.js' {
   declare module.exports: $Exports<'react-chartjs-2/stories/Welcome'>;
-}
-declare module 'react-chartjs-2/stories/index.js' {
-  declare module.exports: $Exports<'react-chartjs-2/stories/index'>;
 }
 declare module 'react-chartjs-2/test/__tests__/Chart_spec.js' {
   declare module.exports: $Exports<'react-chartjs-2/test/__tests__/Chart_spec'>;

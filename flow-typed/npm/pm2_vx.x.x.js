@@ -1,4 +1,4 @@
-// flow-typed signature: 40b037655e00cace6515a45f0951ce58
+// flow-typed signature: ba7a1742915793ad1d60572148c65d9e
 // flow-typed version: <<STUB>>/pm2_v^2.6.1/flow_v0.54.1
 
 /**
@@ -102,11 +102,27 @@ declare module 'pm2/lib/API/Version' {
   declare module.exports: any;
 }
 
+declare module 'pm2/lib/binaries/DevCLI' {
+  declare module.exports: any;
+}
+
+declare module 'pm2/lib/binaries/Runtime' {
+  declare module.exports: any;
+}
+
+declare module 'pm2/lib/binaries/Runtime4Docker' {
+  declare module.exports: any;
+}
+
 declare module 'pm2/lib/Client' {
   declare module.exports: any;
 }
 
 declare module 'pm2/lib/Common' {
+  declare module.exports: any;
+}
+
+declare module 'pm2/lib/completion' {
   declare module.exports: any;
 }
 
@@ -170,7 +186,15 @@ declare module 'pm2/lib/Interactor/InteractorDaemonizer' {
   declare module.exports: any;
 }
 
+declare module 'pm2/lib/Interactor/internal-ip' {
+  declare module.exports: any;
+}
+
 declare module 'pm2/lib/Interactor/Password' {
+  declare module.exports: any;
+}
+
+declare module 'pm2/lib/Interactor/pm2-interface' {
   declare module.exports: any;
 }
 
@@ -206,14 +230,6 @@ declare module 'pm2/lib/Interactor/WatchDog' {
   declare module.exports: any;
 }
 
-declare module 'pm2/lib/Interactor/internal-ip' {
-  declare module.exports: any;
-}
-
-declare module 'pm2/lib/Interactor/pm2-interface' {
-  declare module.exports: any;
-}
-
 declare module 'pm2/lib/ProcessContainer' {
   declare module.exports: any;
 }
@@ -223,38 +239,6 @@ declare module 'pm2/lib/ProcessContainerFork' {
 }
 
 declare module 'pm2/lib/Satan' {
-  declare module.exports: any;
-}
-
-declare module 'pm2/lib/TreeKill' {
-  declare module.exports: any;
-}
-
-declare module 'pm2/lib/Utility' {
-  declare module.exports: any;
-}
-
-declare module 'pm2/lib/Watcher' {
-  declare module.exports: any;
-}
-
-declare module 'pm2/lib/Worker' {
-  declare module.exports: any;
-}
-
-declare module 'pm2/lib/binaries/DevCLI' {
-  declare module.exports: any;
-}
-
-declare module 'pm2/lib/binaries/Runtime' {
-  declare module.exports: any;
-}
-
-declare module 'pm2/lib/binaries/Runtime4Docker' {
-  declare module.exports: any;
-}
-
-declare module 'pm2/lib/completion' {
   declare module.exports: any;
 }
 
@@ -279,6 +263,22 @@ declare module 'pm2/lib/tools/open' {
 }
 
 declare module 'pm2/lib/tools/promise.min' {
+  declare module.exports: any;
+}
+
+declare module 'pm2/lib/TreeKill' {
+  declare module.exports: any;
+}
+
+declare module 'pm2/lib/Utility' {
+  declare module.exports: any;
+}
+
+declare module 'pm2/lib/Watcher' {
+  declare module.exports: any;
+}
+
+declare module 'pm2/lib/Worker' {
   declare module.exports: any;
 }
 
@@ -353,11 +353,23 @@ declare module 'pm2/lib/API/Startup.js' {
 declare module 'pm2/lib/API/Version.js' {
   declare module.exports: $Exports<'pm2/lib/API/Version'>;
 }
+declare module 'pm2/lib/binaries/DevCLI.js' {
+  declare module.exports: $Exports<'pm2/lib/binaries/DevCLI'>;
+}
+declare module 'pm2/lib/binaries/Runtime.js' {
+  declare module.exports: $Exports<'pm2/lib/binaries/Runtime'>;
+}
+declare module 'pm2/lib/binaries/Runtime4Docker.js' {
+  declare module.exports: $Exports<'pm2/lib/binaries/Runtime4Docker'>;
+}
 declare module 'pm2/lib/Client.js' {
   declare module.exports: $Exports<'pm2/lib/Client'>;
 }
 declare module 'pm2/lib/Common.js' {
   declare module.exports: $Exports<'pm2/lib/Common'>;
+}
+declare module 'pm2/lib/completion.js' {
+  declare module.exports: $Exports<'pm2/lib/completion'>;
 }
 declare module 'pm2/lib/Configuration.js' {
   declare module.exports: $Exports<'pm2/lib/Configuration'>;
@@ -404,8 +416,14 @@ declare module 'pm2/lib/Interactor/HttpRequest.js' {
 declare module 'pm2/lib/Interactor/InteractorDaemonizer.js' {
   declare module.exports: $Exports<'pm2/lib/Interactor/InteractorDaemonizer'>;
 }
+declare module 'pm2/lib/Interactor/internal-ip.js' {
+  declare module.exports: $Exports<'pm2/lib/Interactor/internal-ip'>;
+}
 declare module 'pm2/lib/Interactor/Password.js' {
   declare module.exports: $Exports<'pm2/lib/Interactor/Password'>;
+}
+declare module 'pm2/lib/Interactor/pm2-interface.js' {
+  declare module.exports: $Exports<'pm2/lib/Interactor/pm2-interface'>;
 }
 declare module 'pm2/lib/Interactor/PushInteractor.js' {
   declare module.exports: $Exports<'pm2/lib/Interactor/PushInteractor'>;
@@ -431,12 +449,6 @@ declare module 'pm2/lib/Interactor/Utility.js' {
 declare module 'pm2/lib/Interactor/WatchDog.js' {
   declare module.exports: $Exports<'pm2/lib/Interactor/WatchDog'>;
 }
-declare module 'pm2/lib/Interactor/internal-ip.js' {
-  declare module.exports: $Exports<'pm2/lib/Interactor/internal-ip'>;
-}
-declare module 'pm2/lib/Interactor/pm2-interface.js' {
-  declare module.exports: $Exports<'pm2/lib/Interactor/pm2-interface'>;
-}
 declare module 'pm2/lib/ProcessContainer.js' {
   declare module.exports: $Exports<'pm2/lib/ProcessContainer'>;
 }
@@ -445,30 +457,6 @@ declare module 'pm2/lib/ProcessContainerFork.js' {
 }
 declare module 'pm2/lib/Satan.js' {
   declare module.exports: $Exports<'pm2/lib/Satan'>;
-}
-declare module 'pm2/lib/TreeKill.js' {
-  declare module.exports: $Exports<'pm2/lib/TreeKill'>;
-}
-declare module 'pm2/lib/Utility.js' {
-  declare module.exports: $Exports<'pm2/lib/Utility'>;
-}
-declare module 'pm2/lib/Watcher.js' {
-  declare module.exports: $Exports<'pm2/lib/Watcher'>;
-}
-declare module 'pm2/lib/Worker.js' {
-  declare module.exports: $Exports<'pm2/lib/Worker'>;
-}
-declare module 'pm2/lib/binaries/DevCLI.js' {
-  declare module.exports: $Exports<'pm2/lib/binaries/DevCLI'>;
-}
-declare module 'pm2/lib/binaries/Runtime.js' {
-  declare module.exports: $Exports<'pm2/lib/binaries/Runtime'>;
-}
-declare module 'pm2/lib/binaries/Runtime4Docker.js' {
-  declare module.exports: $Exports<'pm2/lib/binaries/Runtime4Docker'>;
-}
-declare module 'pm2/lib/completion.js' {
-  declare module.exports: $Exports<'pm2/lib/completion'>;
 }
 declare module 'pm2/lib/tools/Config.js' {
   declare module.exports: $Exports<'pm2/lib/tools/Config'>;
@@ -487,6 +475,18 @@ declare module 'pm2/lib/tools/open.js' {
 }
 declare module 'pm2/lib/tools/promise.min.js' {
   declare module.exports: $Exports<'pm2/lib/tools/promise.min'>;
+}
+declare module 'pm2/lib/TreeKill.js' {
+  declare module.exports: $Exports<'pm2/lib/TreeKill'>;
+}
+declare module 'pm2/lib/Utility.js' {
+  declare module.exports: $Exports<'pm2/lib/Utility'>;
+}
+declare module 'pm2/lib/Watcher.js' {
+  declare module.exports: $Exports<'pm2/lib/Watcher'>;
+}
+declare module 'pm2/lib/Worker.js' {
+  declare module.exports: $Exports<'pm2/lib/Worker'>;
 }
 declare module 'pm2/paths.js' {
   declare module.exports: $Exports<'pm2/paths'>;

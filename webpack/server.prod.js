@@ -73,6 +73,10 @@ module.exports = {
         use: 'babel-loader'
       },
       {
+        test: /\.(png|jpg|gif|svg)$/,
+        loader: 'url-loader?limit=200000'
+      },
+      {
         test: /\.(sass|scss)$/,
         loader: extractStyles.extract({
           fallback: 'style-loader',

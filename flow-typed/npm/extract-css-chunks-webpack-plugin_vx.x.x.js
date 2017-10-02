@@ -1,4 +1,4 @@
-// flow-typed signature: ef98efcea0f537cdabde475221955727
+// flow-typed signature: d66c918914632a5709c47e96473cdcc0
 // flow-typed version: <<STUB>>/extract-css-chunks-webpack-plugin_v^2.0.15/flow_v0.54.1
 
 /**
@@ -26,15 +26,15 @@ declare module 'extract-css-chunks-webpack-plugin/ExtractedModule' {
   declare module.exports: any;
 }
 
-declare module 'extract-css-chunks-webpack-plugin/OrderUndefinedError' {
-  declare module.exports: any;
-}
-
 declare module 'extract-css-chunks-webpack-plugin/hotModuleReplacement' {
   declare module.exports: any;
 }
 
 declare module 'extract-css-chunks-webpack-plugin/loader' {
+  declare module.exports: any;
+}
+
+declare module 'extract-css-chunks-webpack-plugin/OrderUndefinedError' {
   declare module.exports: any;
 }
 
@@ -50,9 +50,6 @@ declare module 'extract-css-chunks-webpack-plugin/schema/validator' {
 declare module 'extract-css-chunks-webpack-plugin/ExtractedModule.js' {
   declare module.exports: $Exports<'extract-css-chunks-webpack-plugin/ExtractedModule'>;
 }
-declare module 'extract-css-chunks-webpack-plugin/OrderUndefinedError.js' {
-  declare module.exports: $Exports<'extract-css-chunks-webpack-plugin/OrderUndefinedError'>;
-}
 declare module 'extract-css-chunks-webpack-plugin/hotModuleReplacement.js' {
   declare module.exports: $Exports<'extract-css-chunks-webpack-plugin/hotModuleReplacement'>;
 }
@@ -64,6 +61,9 @@ declare module 'extract-css-chunks-webpack-plugin/index.js' {
 }
 declare module 'extract-css-chunks-webpack-plugin/loader.js' {
   declare module.exports: $Exports<'extract-css-chunks-webpack-plugin/loader'>;
+}
+declare module 'extract-css-chunks-webpack-plugin/OrderUndefinedError.js' {
+  declare module.exports: $Exports<'extract-css-chunks-webpack-plugin/OrderUndefinedError'>;
 }
 declare module 'extract-css-chunks-webpack-plugin/schema/loader-schema.js' {
   declare module.exports: $Exports<'extract-css-chunks-webpack-plugin/schema/loader-schema'>;

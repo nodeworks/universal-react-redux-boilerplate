@@ -1,4 +1,4 @@
-// flow-typed signature: 65c470931572f084ce53dbd6862d6b9b
+// flow-typed signature: e7d854b7efb260077dc7b947faee6d5c
 // flow-typed version: <<STUB>>/node-sass_v^4.5.3/flow_v0.54.1
 
 /**
@@ -102,11 +102,11 @@ declare module 'node-sass/test/fixtures/extras/my_custom_functions_string_conver
   declare module.exports: any;
 }
 
-declare module 'node-sass/test/fixtures/extras/my_custom_importer_data' {
+declare module 'node-sass/test/fixtures/extras/my_custom_importer_data_cb' {
   declare module.exports: any;
 }
 
-declare module 'node-sass/test/fixtures/extras/my_custom_importer_data_cb' {
+declare module 'node-sass/test/fixtures/extras/my_custom_importer_data' {
   declare module.exports: any;
 }
 
@@ -114,7 +114,7 @@ declare module 'node-sass/test/fixtures/extras/my_custom_importer_error' {
   declare module.exports: any;
 }
 
-declare module 'node-sass/test/fixtures/extras/my_custom_importer_file' {
+declare module 'node-sass/test/fixtures/extras/my_custom_importer_file_and_data_cb' {
   declare module.exports: any;
 }
 
@@ -122,11 +122,11 @@ declare module 'node-sass/test/fixtures/extras/my_custom_importer_file_and_data'
   declare module.exports: any;
 }
 
-declare module 'node-sass/test/fixtures/extras/my_custom_importer_file_and_data_cb' {
+declare module 'node-sass/test/fixtures/extras/my_custom_importer_file_cb' {
   declare module.exports: any;
 }
 
-declare module 'node-sass/test/fixtures/extras/my_custom_importer_file_cb' {
+declare module 'node-sass/test/fixtures/extras/my_custom_importer_file' {
   declare module.exports: any;
 }
 
@@ -211,26 +211,26 @@ declare module 'node-sass/test/fixtures/extras/my_custom_functions_setter.js' {
 declare module 'node-sass/test/fixtures/extras/my_custom_functions_string_conversion.js' {
   declare module.exports: $Exports<'node-sass/test/fixtures/extras/my_custom_functions_string_conversion'>;
 }
-declare module 'node-sass/test/fixtures/extras/my_custom_importer_data.js' {
-  declare module.exports: $Exports<'node-sass/test/fixtures/extras/my_custom_importer_data'>;
-}
 declare module 'node-sass/test/fixtures/extras/my_custom_importer_data_cb.js' {
   declare module.exports: $Exports<'node-sass/test/fixtures/extras/my_custom_importer_data_cb'>;
+}
+declare module 'node-sass/test/fixtures/extras/my_custom_importer_data.js' {
+  declare module.exports: $Exports<'node-sass/test/fixtures/extras/my_custom_importer_data'>;
 }
 declare module 'node-sass/test/fixtures/extras/my_custom_importer_error.js' {
   declare module.exports: $Exports<'node-sass/test/fixtures/extras/my_custom_importer_error'>;
 }
-declare module 'node-sass/test/fixtures/extras/my_custom_importer_file.js' {
-  declare module.exports: $Exports<'node-sass/test/fixtures/extras/my_custom_importer_file'>;
+declare module 'node-sass/test/fixtures/extras/my_custom_importer_file_and_data_cb.js' {
+  declare module.exports: $Exports<'node-sass/test/fixtures/extras/my_custom_importer_file_and_data_cb'>;
 }
 declare module 'node-sass/test/fixtures/extras/my_custom_importer_file_and_data.js' {
   declare module.exports: $Exports<'node-sass/test/fixtures/extras/my_custom_importer_file_and_data'>;
 }
-declare module 'node-sass/test/fixtures/extras/my_custom_importer_file_and_data_cb.js' {
-  declare module.exports: $Exports<'node-sass/test/fixtures/extras/my_custom_importer_file_and_data_cb'>;
-}
 declare module 'node-sass/test/fixtures/extras/my_custom_importer_file_cb.js' {
   declare module.exports: $Exports<'node-sass/test/fixtures/extras/my_custom_importer_file_cb'>;
+}
+declare module 'node-sass/test/fixtures/extras/my_custom_importer_file.js' {
+  declare module.exports: $Exports<'node-sass/test/fixtures/extras/my_custom_importer_file'>;
 }
 declare module 'node-sass/test/lowlevel.js' {
   declare module.exports: $Exports<'node-sass/test/lowlevel'>;

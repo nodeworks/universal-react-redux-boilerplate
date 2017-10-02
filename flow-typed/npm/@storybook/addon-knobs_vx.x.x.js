@@ -1,4 +1,4 @@
-// flow-typed signature: 31e391d6a997576ecbd080cd0425d016
+// flow-typed signature: c9b84987dcb8a18970418f6f5d7c3ce3
 // flow-typed version: <<STUB>>/@storybook/addon-knobs_v^3.2.8/flow_v0.54.1
 
 /**
@@ -22,14 +22,6 @@ declare module '@storybook/addon-knobs' {
  * require those files directly. Feel free to delete any files that aren't
  * needed.
  */
-declare module '@storybook/addon-knobs/dist/KnobManager' {
-  declare module.exports: any;
-}
-
-declare module '@storybook/addon-knobs/dist/KnobStore' {
-  declare module.exports: any;
-}
-
 declare module '@storybook/addon-knobs/dist/components/Panel' {
   declare module.exports: any;
 }
@@ -62,6 +54,10 @@ declare module '@storybook/addon-knobs/dist/components/types/Date/styles' {
   declare module.exports: any;
 }
 
+declare module '@storybook/addon-knobs/dist/components/types/index' {
+  declare module.exports: any;
+}
+
 declare module '@storybook/addon-knobs/dist/components/types/Number' {
   declare module.exports: any;
 }
@@ -78,19 +74,23 @@ declare module '@storybook/addon-knobs/dist/components/types/Text' {
   declare module.exports: any;
 }
 
-declare module '@storybook/addon-knobs/dist/components/types/index' {
-  declare module.exports: any;
-}
-
 declare module '@storybook/addon-knobs/dist/index' {
   declare module.exports: any;
 }
 
-declare module '@storybook/addon-knobs/dist/react/WrapStory' {
+declare module '@storybook/addon-knobs/dist/KnobManager' {
+  declare module.exports: any;
+}
+
+declare module '@storybook/addon-knobs/dist/KnobStore' {
   declare module.exports: any;
 }
 
 declare module '@storybook/addon-knobs/dist/react/index' {
+  declare module.exports: any;
+}
+
+declare module '@storybook/addon-knobs/dist/react/WrapStory' {
   declare module.exports: any;
 }
 
@@ -111,12 +111,6 @@ declare module '@storybook/addon-knobs/register' {
 }
 
 // Filename aliases
-declare module '@storybook/addon-knobs/dist/KnobManager.js' {
-  declare module.exports: $Exports<'@storybook/addon-knobs/dist/KnobManager'>;
-}
-declare module '@storybook/addon-knobs/dist/KnobStore.js' {
-  declare module.exports: $Exports<'@storybook/addon-knobs/dist/KnobStore'>;
-}
 declare module '@storybook/addon-knobs/dist/components/Panel.js' {
   declare module.exports: $Exports<'@storybook/addon-knobs/dist/components/Panel'>;
 }
@@ -141,6 +135,9 @@ declare module '@storybook/addon-knobs/dist/components/types/Date/index.js' {
 declare module '@storybook/addon-knobs/dist/components/types/Date/styles.js' {
   declare module.exports: $Exports<'@storybook/addon-knobs/dist/components/types/Date/styles'>;
 }
+declare module '@storybook/addon-knobs/dist/components/types/index.js' {
+  declare module.exports: $Exports<'@storybook/addon-knobs/dist/components/types/index'>;
+}
 declare module '@storybook/addon-knobs/dist/components/types/Number.js' {
   declare module.exports: $Exports<'@storybook/addon-knobs/dist/components/types/Number'>;
 }
@@ -153,17 +150,20 @@ declare module '@storybook/addon-knobs/dist/components/types/Select.js' {
 declare module '@storybook/addon-knobs/dist/components/types/Text.js' {
   declare module.exports: $Exports<'@storybook/addon-knobs/dist/components/types/Text'>;
 }
-declare module '@storybook/addon-knobs/dist/components/types/index.js' {
-  declare module.exports: $Exports<'@storybook/addon-knobs/dist/components/types/index'>;
-}
 declare module '@storybook/addon-knobs/dist/index.js' {
   declare module.exports: $Exports<'@storybook/addon-knobs/dist/index'>;
 }
-declare module '@storybook/addon-knobs/dist/react/WrapStory.js' {
-  declare module.exports: $Exports<'@storybook/addon-knobs/dist/react/WrapStory'>;
+declare module '@storybook/addon-knobs/dist/KnobManager.js' {
+  declare module.exports: $Exports<'@storybook/addon-knobs/dist/KnobManager'>;
+}
+declare module '@storybook/addon-knobs/dist/KnobStore.js' {
+  declare module.exports: $Exports<'@storybook/addon-knobs/dist/KnobStore'>;
 }
 declare module '@storybook/addon-knobs/dist/react/index.js' {
   declare module.exports: $Exports<'@storybook/addon-knobs/dist/react/index'>;
+}
+declare module '@storybook/addon-knobs/dist/react/WrapStory.js' {
+  declare module.exports: $Exports<'@storybook/addon-knobs/dist/react/WrapStory'>;
 }
 declare module '@storybook/addon-knobs/dist/register.js' {
   declare module.exports: $Exports<'@storybook/addon-knobs/dist/register'>;

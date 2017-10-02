@@ -1,4 +1,4 @@
-// flow-typed signature: 9323790f2f1865d7be5f8faa79a1788c
+// flow-typed signature: 7bf679e0782db4d66d4bcc26972fe0b3
 // flow-typed version: <<STUB>>/autodll-webpack-plugin_v^0.0.7/flow_v0.54.1
 
 /**
@@ -42,11 +42,11 @@ declare module 'autodll-webpack-plugin/examples/performance/src/App' {
   declare module.exports: any;
 }
 
-declare module 'autodll-webpack-plugin/examples/performance/src/TestMoment' {
+declare module 'autodll-webpack-plugin/examples/performance/src/index' {
   declare module.exports: any;
 }
 
-declare module 'autodll-webpack-plugin/examples/performance/src/index' {
+declare module 'autodll-webpack-plugin/examples/performance/src/TestMoment' {
   declare module.exports: any;
 }
 
@@ -186,11 +186,11 @@ declare module 'autodll-webpack-plugin/examples/minification/webpack.config.js' 
 declare module 'autodll-webpack-plugin/examples/performance/src/App.js' {
   declare module.exports: $Exports<'autodll-webpack-plugin/examples/performance/src/App'>;
 }
-declare module 'autodll-webpack-plugin/examples/performance/src/TestMoment.js' {
-  declare module.exports: $Exports<'autodll-webpack-plugin/examples/performance/src/TestMoment'>;
-}
 declare module 'autodll-webpack-plugin/examples/performance/src/index.js' {
   declare module.exports: $Exports<'autodll-webpack-plugin/examples/performance/src/index'>;
+}
+declare module 'autodll-webpack-plugin/examples/performance/src/TestMoment.js' {
+  declare module.exports: $Exports<'autodll-webpack-plugin/examples/performance/src/TestMoment'>;
 }
 declare module 'autodll-webpack-plugin/examples/performance/webpack.config.js' {
   declare module.exports: $Exports<'autodll-webpack-plugin/examples/performance/webpack.config'>;

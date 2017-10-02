@@ -1,4 +1,4 @@
-// flow-typed signature: ced7151860ff8ef85cc229e1bafbbf23
+// flow-typed signature: afde2deaceb477524b3a7276960959a9
 // flow-typed version: <<STUB>>/jsdom_v^11.2.0/flow_v0.54.1
 
 /**
@@ -23,10 +23,6 @@ declare module 'jsdom' {
  * needed.
  */
 declare module 'jsdom/lib/api' {
-  declare module.exports: any;
-}
-
-declare module 'jsdom/lib/jsdom/browser/Window' {
   declare module.exports: any;
 }
 
@@ -55,6 +51,10 @@ declare module 'jsdom/lib/jsdom/browser/not-implemented' {
 }
 
 declare module 'jsdom/lib/jsdom/browser/resource-loader' {
+  declare module.exports: any;
+}
+
+declare module 'jsdom/lib/jsdom/browser/Window' {
   declare module.exports: any;
 }
 
@@ -194,18 +194,6 @@ declare module 'jsdom/lib/jsdom/living/generated/CustomEventInit' {
   declare module.exports: any;
 }
 
-declare module 'jsdom/lib/jsdom/living/generated/DOMImplementation' {
-  declare module.exports: any;
-}
-
-declare module 'jsdom/lib/jsdom/living/generated/DOMParser' {
-  declare module.exports: any;
-}
-
-declare module 'jsdom/lib/jsdom/living/generated/DOMStringMap' {
-  declare module.exports: any;
-}
-
 declare module 'jsdom/lib/jsdom/living/generated/Document' {
   declare module.exports: any;
 }
@@ -218,15 +206,27 @@ declare module 'jsdom/lib/jsdom/living/generated/DocumentType' {
   declare module.exports: any;
 }
 
+declare module 'jsdom/lib/jsdom/living/generated/DOMImplementation' {
+  declare module.exports: any;
+}
+
+declare module 'jsdom/lib/jsdom/living/generated/DOMParser' {
+  declare module.exports: any;
+}
+
+declare module 'jsdom/lib/jsdom/living/generated/DOMStringMap' {
+  declare module.exports: any;
+}
+
 declare module 'jsdom/lib/jsdom/living/generated/Element' {
   declare module.exports: any;
 }
 
-declare module 'jsdom/lib/jsdom/living/generated/ElementCSSInlineStyle' {
+declare module 'jsdom/lib/jsdom/living/generated/ElementContentEditable' {
   declare module.exports: any;
 }
 
-declare module 'jsdom/lib/jsdom/living/generated/ElementContentEditable' {
+declare module 'jsdom/lib/jsdom/living/generated/ElementCSSInlineStyle' {
   declare module.exports: any;
 }
 
@@ -294,6 +294,18 @@ declare module 'jsdom/lib/jsdom/living/generated/GlobalEventHandlers' {
   declare module.exports: any;
 }
 
+declare module 'jsdom/lib/jsdom/living/generated/HashChangeEvent' {
+  declare module.exports: any;
+}
+
+declare module 'jsdom/lib/jsdom/living/generated/HashChangeEventInit' {
+  declare module.exports: any;
+}
+
+declare module 'jsdom/lib/jsdom/living/generated/History' {
+  declare module.exports: any;
+}
+
 declare module 'jsdom/lib/jsdom/living/generated/HTMLAnchorElement' {
   declare module.exports: any;
 }
@@ -310,15 +322,15 @@ declare module 'jsdom/lib/jsdom/living/generated/HTMLAudioElement' {
   declare module.exports: any;
 }
 
-declare module 'jsdom/lib/jsdom/living/generated/HTMLBRElement' {
-  declare module.exports: any;
-}
-
 declare module 'jsdom/lib/jsdom/living/generated/HTMLBaseElement' {
   declare module.exports: any;
 }
 
 declare module 'jsdom/lib/jsdom/living/generated/HTMLBodyElement' {
+  declare module.exports: any;
+}
+
+declare module 'jsdom/lib/jsdom/living/generated/HTMLBRElement' {
   declare module.exports: any;
 }
 
@@ -331,10 +343,6 @@ declare module 'jsdom/lib/jsdom/living/generated/HTMLCanvasElement' {
 }
 
 declare module 'jsdom/lib/jsdom/living/generated/HTMLCollection' {
-  declare module.exports: any;
-}
-
-declare module 'jsdom/lib/jsdom/living/generated/HTMLDListElement' {
   declare module.exports: any;
 }
 
@@ -355,6 +363,10 @@ declare module 'jsdom/lib/jsdom/living/generated/HTMLDirectoryElement' {
 }
 
 declare module 'jsdom/lib/jsdom/living/generated/HTMLDivElement' {
+  declare module.exports: any;
+}
+
+declare module 'jsdom/lib/jsdom/living/generated/HTMLDListElement' {
   declare module.exports: any;
 }
 
@@ -386,15 +398,15 @@ declare module 'jsdom/lib/jsdom/living/generated/HTMLFrameSetElement' {
   declare module.exports: any;
 }
 
-declare module 'jsdom/lib/jsdom/living/generated/HTMLHRElement' {
-  declare module.exports: any;
-}
-
 declare module 'jsdom/lib/jsdom/living/generated/HTMLHeadElement' {
   declare module.exports: any;
 }
 
 declare module 'jsdom/lib/jsdom/living/generated/HTMLHeadingElement' {
+  declare module.exports: any;
+}
+
+declare module 'jsdom/lib/jsdom/living/generated/HTMLHRElement' {
   declare module.exports: any;
 }
 
@@ -418,15 +430,15 @@ declare module 'jsdom/lib/jsdom/living/generated/HTMLInputElement' {
   declare module.exports: any;
 }
 
-declare module 'jsdom/lib/jsdom/living/generated/HTMLLIElement' {
-  declare module.exports: any;
-}
-
 declare module 'jsdom/lib/jsdom/living/generated/HTMLLabelElement' {
   declare module.exports: any;
 }
 
 declare module 'jsdom/lib/jsdom/living/generated/HTMLLegendElement' {
+  declare module.exports: any;
+}
+
+declare module 'jsdom/lib/jsdom/living/generated/HTMLLIElement' {
   declare module.exports: any;
 }
 
@@ -458,11 +470,11 @@ declare module 'jsdom/lib/jsdom/living/generated/HTMLModElement' {
   declare module.exports: any;
 }
 
-declare module 'jsdom/lib/jsdom/living/generated/HTMLOListElement' {
+declare module 'jsdom/lib/jsdom/living/generated/HTMLObjectElement' {
   declare module.exports: any;
 }
 
-declare module 'jsdom/lib/jsdom/living/generated/HTMLObjectElement' {
+declare module 'jsdom/lib/jsdom/living/generated/HTMLOListElement' {
   declare module.exports: any;
 }
 
@@ -583,18 +595,6 @@ declare module 'jsdom/lib/jsdom/living/generated/HTMLUnknownElement' {
 }
 
 declare module 'jsdom/lib/jsdom/living/generated/HTMLVideoElement' {
-  declare module.exports: any;
-}
-
-declare module 'jsdom/lib/jsdom/living/generated/HashChangeEvent' {
-  declare module.exports: any;
-}
-
-declare module 'jsdom/lib/jsdom/living/generated/HashChangeEventInit' {
-  declare module.exports: any;
-}
-
-declare module 'jsdom/lib/jsdom/living/generated/History' {
   declare module.exports: any;
 }
 
@@ -730,6 +730,10 @@ declare module 'jsdom/lib/jsdom/living/generated/UIEventInit' {
   declare module.exports: any;
 }
 
+declare module 'jsdom/lib/jsdom/living/generated/utils' {
+  declare module.exports: any;
+}
+
 declare module 'jsdom/lib/jsdom/living/generated/WindowEventHandlers' {
   declare module.exports: any;
 }
@@ -743,10 +747,6 @@ declare module 'jsdom/lib/jsdom/living/generated/XMLHttpRequestEventTarget' {
 }
 
 declare module 'jsdom/lib/jsdom/living/generated/XMLHttpRequestUpload' {
-  declare module.exports: any;
-}
-
-declare module 'jsdom/lib/jsdom/living/generated/utils' {
   declare module.exports: any;
 }
 
@@ -870,14 +870,6 @@ declare module 'jsdom/lib/jsdom/living/nodes/Comment-impl' {
   declare module.exports: any;
 }
 
-declare module 'jsdom/lib/jsdom/living/nodes/DOMImplementation-impl' {
-  declare module.exports: any;
-}
-
-declare module 'jsdom/lib/jsdom/living/nodes/DOMStringMap-impl' {
-  declare module.exports: any;
-}
-
 declare module 'jsdom/lib/jsdom/living/nodes/Document-impl' {
   declare module.exports: any;
 }
@@ -890,15 +882,23 @@ declare module 'jsdom/lib/jsdom/living/nodes/DocumentType-impl' {
   declare module.exports: any;
 }
 
+declare module 'jsdom/lib/jsdom/living/nodes/DOMImplementation-impl' {
+  declare module.exports: any;
+}
+
+declare module 'jsdom/lib/jsdom/living/nodes/DOMStringMap-impl' {
+  declare module.exports: any;
+}
+
 declare module 'jsdom/lib/jsdom/living/nodes/Element-impl' {
   declare module.exports: any;
 }
 
-declare module 'jsdom/lib/jsdom/living/nodes/ElementCSSInlineStyle-impl' {
+declare module 'jsdom/lib/jsdom/living/nodes/ElementContentEditable-impl' {
   declare module.exports: any;
 }
 
-declare module 'jsdom/lib/jsdom/living/nodes/ElementContentEditable-impl' {
+declare module 'jsdom/lib/jsdom/living/nodes/ElementCSSInlineStyle-impl' {
   declare module.exports: any;
 }
 
@@ -922,15 +922,15 @@ declare module 'jsdom/lib/jsdom/living/nodes/HTMLAudioElement-impl' {
   declare module.exports: any;
 }
 
-declare module 'jsdom/lib/jsdom/living/nodes/HTMLBRElement-impl' {
-  declare module.exports: any;
-}
-
 declare module 'jsdom/lib/jsdom/living/nodes/HTMLBaseElement-impl' {
   declare module.exports: any;
 }
 
 declare module 'jsdom/lib/jsdom/living/nodes/HTMLBodyElement-impl' {
+  declare module.exports: any;
+}
+
+declare module 'jsdom/lib/jsdom/living/nodes/HTMLBRElement-impl' {
   declare module.exports: any;
 }
 
@@ -943,10 +943,6 @@ declare module 'jsdom/lib/jsdom/living/nodes/HTMLCanvasElement-impl' {
 }
 
 declare module 'jsdom/lib/jsdom/living/nodes/HTMLCollection-impl' {
-  declare module.exports: any;
-}
-
-declare module 'jsdom/lib/jsdom/living/nodes/HTMLDListElement-impl' {
   declare module.exports: any;
 }
 
@@ -967,6 +963,10 @@ declare module 'jsdom/lib/jsdom/living/nodes/HTMLDirectoryElement-impl' {
 }
 
 declare module 'jsdom/lib/jsdom/living/nodes/HTMLDivElement-impl' {
+  declare module.exports: any;
+}
+
+declare module 'jsdom/lib/jsdom/living/nodes/HTMLDListElement-impl' {
   declare module.exports: any;
 }
 
@@ -998,15 +998,15 @@ declare module 'jsdom/lib/jsdom/living/nodes/HTMLFrameSetElement-impl' {
   declare module.exports: any;
 }
 
-declare module 'jsdom/lib/jsdom/living/nodes/HTMLHRElement-impl' {
-  declare module.exports: any;
-}
-
 declare module 'jsdom/lib/jsdom/living/nodes/HTMLHeadElement-impl' {
   declare module.exports: any;
 }
 
 declare module 'jsdom/lib/jsdom/living/nodes/HTMLHeadingElement-impl' {
+  declare module.exports: any;
+}
+
+declare module 'jsdom/lib/jsdom/living/nodes/HTMLHRElement-impl' {
   declare module.exports: any;
 }
 
@@ -1030,15 +1030,15 @@ declare module 'jsdom/lib/jsdom/living/nodes/HTMLInputElement-impl' {
   declare module.exports: any;
 }
 
-declare module 'jsdom/lib/jsdom/living/nodes/HTMLLIElement-impl' {
-  declare module.exports: any;
-}
-
 declare module 'jsdom/lib/jsdom/living/nodes/HTMLLabelElement-impl' {
   declare module.exports: any;
 }
 
 declare module 'jsdom/lib/jsdom/living/nodes/HTMLLegendElement-impl' {
+  declare module.exports: any;
+}
+
+declare module 'jsdom/lib/jsdom/living/nodes/HTMLLIElement-impl' {
   declare module.exports: any;
 }
 
@@ -1070,11 +1070,11 @@ declare module 'jsdom/lib/jsdom/living/nodes/HTMLModElement-impl' {
   declare module.exports: any;
 }
 
-declare module 'jsdom/lib/jsdom/living/nodes/HTMLOListElement-impl' {
+declare module 'jsdom/lib/jsdom/living/nodes/HTMLObjectElement-impl' {
   declare module.exports: any;
 }
 
-declare module 'jsdom/lib/jsdom/living/nodes/HTMLObjectElement-impl' {
+declare module 'jsdom/lib/jsdom/living/nodes/HTMLOListElement-impl' {
   declare module.exports: any;
 }
 
@@ -1246,15 +1246,15 @@ declare module 'jsdom/lib/jsdom/living/register-elements' {
   declare module.exports: any;
 }
 
+declare module 'jsdom/lib/jsdom/living/traversal/helpers' {
+  declare module.exports: any;
+}
+
 declare module 'jsdom/lib/jsdom/living/traversal/NodeIterator-impl' {
   declare module.exports: any;
 }
 
 declare module 'jsdom/lib/jsdom/living/traversal/TreeWalker-impl' {
-  declare module.exports: any;
-}
-
-declare module 'jsdom/lib/jsdom/living/traversal/helpers' {
   declare module.exports: any;
 }
 
@@ -1270,11 +1270,11 @@ declare module 'jsdom/lib/jsdom/living/window/Location-impl' {
   declare module.exports: any;
 }
 
-declare module 'jsdom/lib/jsdom/living/window/SessionHistory' {
+declare module 'jsdom/lib/jsdom/living/window/navigation' {
   declare module.exports: any;
 }
 
-declare module 'jsdom/lib/jsdom/living/window/navigation' {
+declare module 'jsdom/lib/jsdom/living/window/SessionHistory' {
   declare module.exports: any;
 }
 
@@ -1334,9 +1334,6 @@ declare module 'jsdom/lib/old-api' {
 declare module 'jsdom/lib/api.js' {
   declare module.exports: $Exports<'jsdom/lib/api'>;
 }
-declare module 'jsdom/lib/jsdom/browser/Window.js' {
-  declare module.exports: $Exports<'jsdom/lib/jsdom/browser/Window'>;
-}
 declare module 'jsdom/lib/jsdom/browser/default-stylesheet.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/browser/default-stylesheet'>;
 }
@@ -1357,6 +1354,9 @@ declare module 'jsdom/lib/jsdom/browser/not-implemented.js' {
 }
 declare module 'jsdom/lib/jsdom/browser/resource-loader.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/browser/resource-loader'>;
+}
+declare module 'jsdom/lib/jsdom/browser/Window.js' {
+  declare module.exports: $Exports<'jsdom/lib/jsdom/browser/Window'>;
 }
 declare module 'jsdom/lib/jsdom/level2/style.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/level2/style'>;
@@ -1460,15 +1460,6 @@ declare module 'jsdom/lib/jsdom/living/generated/CustomEvent.js' {
 declare module 'jsdom/lib/jsdom/living/generated/CustomEventInit.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/CustomEventInit'>;
 }
-declare module 'jsdom/lib/jsdom/living/generated/DOMImplementation.js' {
-  declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/DOMImplementation'>;
-}
-declare module 'jsdom/lib/jsdom/living/generated/DOMParser.js' {
-  declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/DOMParser'>;
-}
-declare module 'jsdom/lib/jsdom/living/generated/DOMStringMap.js' {
-  declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/DOMStringMap'>;
-}
 declare module 'jsdom/lib/jsdom/living/generated/Document.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/Document'>;
 }
@@ -1478,14 +1469,23 @@ declare module 'jsdom/lib/jsdom/living/generated/DocumentFragment.js' {
 declare module 'jsdom/lib/jsdom/living/generated/DocumentType.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/DocumentType'>;
 }
+declare module 'jsdom/lib/jsdom/living/generated/DOMImplementation.js' {
+  declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/DOMImplementation'>;
+}
+declare module 'jsdom/lib/jsdom/living/generated/DOMParser.js' {
+  declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/DOMParser'>;
+}
+declare module 'jsdom/lib/jsdom/living/generated/DOMStringMap.js' {
+  declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/DOMStringMap'>;
+}
 declare module 'jsdom/lib/jsdom/living/generated/Element.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/Element'>;
 }
-declare module 'jsdom/lib/jsdom/living/generated/ElementCSSInlineStyle.js' {
-  declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/ElementCSSInlineStyle'>;
-}
 declare module 'jsdom/lib/jsdom/living/generated/ElementContentEditable.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/ElementContentEditable'>;
+}
+declare module 'jsdom/lib/jsdom/living/generated/ElementCSSInlineStyle.js' {
+  declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/ElementCSSInlineStyle'>;
 }
 declare module 'jsdom/lib/jsdom/living/generated/ErrorEvent.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/ErrorEvent'>;
@@ -1535,6 +1535,15 @@ declare module 'jsdom/lib/jsdom/living/generated/FormData.js' {
 declare module 'jsdom/lib/jsdom/living/generated/GlobalEventHandlers.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/GlobalEventHandlers'>;
 }
+declare module 'jsdom/lib/jsdom/living/generated/HashChangeEvent.js' {
+  declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HashChangeEvent'>;
+}
+declare module 'jsdom/lib/jsdom/living/generated/HashChangeEventInit.js' {
+  declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HashChangeEventInit'>;
+}
+declare module 'jsdom/lib/jsdom/living/generated/History.js' {
+  declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/History'>;
+}
 declare module 'jsdom/lib/jsdom/living/generated/HTMLAnchorElement.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLAnchorElement'>;
 }
@@ -1547,14 +1556,14 @@ declare module 'jsdom/lib/jsdom/living/generated/HTMLAreaElement.js' {
 declare module 'jsdom/lib/jsdom/living/generated/HTMLAudioElement.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLAudioElement'>;
 }
-declare module 'jsdom/lib/jsdom/living/generated/HTMLBRElement.js' {
-  declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLBRElement'>;
-}
 declare module 'jsdom/lib/jsdom/living/generated/HTMLBaseElement.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLBaseElement'>;
 }
 declare module 'jsdom/lib/jsdom/living/generated/HTMLBodyElement.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLBodyElement'>;
+}
+declare module 'jsdom/lib/jsdom/living/generated/HTMLBRElement.js' {
+  declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLBRElement'>;
 }
 declare module 'jsdom/lib/jsdom/living/generated/HTMLButtonElement.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLButtonElement'>;
@@ -1564,9 +1573,6 @@ declare module 'jsdom/lib/jsdom/living/generated/HTMLCanvasElement.js' {
 }
 declare module 'jsdom/lib/jsdom/living/generated/HTMLCollection.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLCollection'>;
-}
-declare module 'jsdom/lib/jsdom/living/generated/HTMLDListElement.js' {
-  declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLDListElement'>;
 }
 declare module 'jsdom/lib/jsdom/living/generated/HTMLDataElement.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLDataElement'>;
@@ -1582,6 +1588,9 @@ declare module 'jsdom/lib/jsdom/living/generated/HTMLDirectoryElement.js' {
 }
 declare module 'jsdom/lib/jsdom/living/generated/HTMLDivElement.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLDivElement'>;
+}
+declare module 'jsdom/lib/jsdom/living/generated/HTMLDListElement.js' {
+  declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLDListElement'>;
 }
 declare module 'jsdom/lib/jsdom/living/generated/HTMLElement.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLElement'>;
@@ -1604,14 +1613,14 @@ declare module 'jsdom/lib/jsdom/living/generated/HTMLFrameElement.js' {
 declare module 'jsdom/lib/jsdom/living/generated/HTMLFrameSetElement.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLFrameSetElement'>;
 }
-declare module 'jsdom/lib/jsdom/living/generated/HTMLHRElement.js' {
-  declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLHRElement'>;
-}
 declare module 'jsdom/lib/jsdom/living/generated/HTMLHeadElement.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLHeadElement'>;
 }
 declare module 'jsdom/lib/jsdom/living/generated/HTMLHeadingElement.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLHeadingElement'>;
+}
+declare module 'jsdom/lib/jsdom/living/generated/HTMLHRElement.js' {
+  declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLHRElement'>;
 }
 declare module 'jsdom/lib/jsdom/living/generated/HTMLHtmlElement.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLHtmlElement'>;
@@ -1628,14 +1637,14 @@ declare module 'jsdom/lib/jsdom/living/generated/HTMLImageElement.js' {
 declare module 'jsdom/lib/jsdom/living/generated/HTMLInputElement.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLInputElement'>;
 }
-declare module 'jsdom/lib/jsdom/living/generated/HTMLLIElement.js' {
-  declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLLIElement'>;
-}
 declare module 'jsdom/lib/jsdom/living/generated/HTMLLabelElement.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLLabelElement'>;
 }
 declare module 'jsdom/lib/jsdom/living/generated/HTMLLegendElement.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLLegendElement'>;
+}
+declare module 'jsdom/lib/jsdom/living/generated/HTMLLIElement.js' {
+  declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLLIElement'>;
 }
 declare module 'jsdom/lib/jsdom/living/generated/HTMLLinkElement.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLLinkElement'>;
@@ -1658,11 +1667,11 @@ declare module 'jsdom/lib/jsdom/living/generated/HTMLMeterElement.js' {
 declare module 'jsdom/lib/jsdom/living/generated/HTMLModElement.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLModElement'>;
 }
-declare module 'jsdom/lib/jsdom/living/generated/HTMLOListElement.js' {
-  declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLOListElement'>;
-}
 declare module 'jsdom/lib/jsdom/living/generated/HTMLObjectElement.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLObjectElement'>;
+}
+declare module 'jsdom/lib/jsdom/living/generated/HTMLOListElement.js' {
+  declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLOListElement'>;
 }
 declare module 'jsdom/lib/jsdom/living/generated/HTMLOptGroupElement.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLOptGroupElement'>;
@@ -1753,15 +1762,6 @@ declare module 'jsdom/lib/jsdom/living/generated/HTMLUnknownElement.js' {
 }
 declare module 'jsdom/lib/jsdom/living/generated/HTMLVideoElement.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HTMLVideoElement'>;
-}
-declare module 'jsdom/lib/jsdom/living/generated/HashChangeEvent.js' {
-  declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HashChangeEvent'>;
-}
-declare module 'jsdom/lib/jsdom/living/generated/HashChangeEventInit.js' {
-  declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/HashChangeEventInit'>;
-}
-declare module 'jsdom/lib/jsdom/living/generated/History.js' {
-  declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/History'>;
 }
 declare module 'jsdom/lib/jsdom/living/generated/KeyboardEvent.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/KeyboardEvent'>;
@@ -1862,6 +1862,9 @@ declare module 'jsdom/lib/jsdom/living/generated/UIEvent.js' {
 declare module 'jsdom/lib/jsdom/living/generated/UIEventInit.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/UIEventInit'>;
 }
+declare module 'jsdom/lib/jsdom/living/generated/utils.js' {
+  declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/utils'>;
+}
 declare module 'jsdom/lib/jsdom/living/generated/WindowEventHandlers.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/WindowEventHandlers'>;
 }
@@ -1873,9 +1876,6 @@ declare module 'jsdom/lib/jsdom/living/generated/XMLHttpRequestEventTarget.js' {
 }
 declare module 'jsdom/lib/jsdom/living/generated/XMLHttpRequestUpload.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/XMLHttpRequestUpload'>;
-}
-declare module 'jsdom/lib/jsdom/living/generated/utils.js' {
-  declare module.exports: $Exports<'jsdom/lib/jsdom/living/generated/utils'>;
 }
 declare module 'jsdom/lib/jsdom/living/helpers/create-event-accessor.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/helpers/create-event-accessor'>;
@@ -1967,12 +1967,6 @@ declare module 'jsdom/lib/jsdom/living/nodes/ChildNode-impl.js' {
 declare module 'jsdom/lib/jsdom/living/nodes/Comment-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/Comment-impl'>;
 }
-declare module 'jsdom/lib/jsdom/living/nodes/DOMImplementation-impl.js' {
-  declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/DOMImplementation-impl'>;
-}
-declare module 'jsdom/lib/jsdom/living/nodes/DOMStringMap-impl.js' {
-  declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/DOMStringMap-impl'>;
-}
 declare module 'jsdom/lib/jsdom/living/nodes/Document-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/Document-impl'>;
 }
@@ -1982,14 +1976,20 @@ declare module 'jsdom/lib/jsdom/living/nodes/DocumentFragment-impl.js' {
 declare module 'jsdom/lib/jsdom/living/nodes/DocumentType-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/DocumentType-impl'>;
 }
+declare module 'jsdom/lib/jsdom/living/nodes/DOMImplementation-impl.js' {
+  declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/DOMImplementation-impl'>;
+}
+declare module 'jsdom/lib/jsdom/living/nodes/DOMStringMap-impl.js' {
+  declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/DOMStringMap-impl'>;
+}
 declare module 'jsdom/lib/jsdom/living/nodes/Element-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/Element-impl'>;
 }
-declare module 'jsdom/lib/jsdom/living/nodes/ElementCSSInlineStyle-impl.js' {
-  declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/ElementCSSInlineStyle-impl'>;
-}
 declare module 'jsdom/lib/jsdom/living/nodes/ElementContentEditable-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/ElementContentEditable-impl'>;
+}
+declare module 'jsdom/lib/jsdom/living/nodes/ElementCSSInlineStyle-impl.js' {
+  declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/ElementCSSInlineStyle-impl'>;
 }
 declare module 'jsdom/lib/jsdom/living/nodes/GlobalEventHandlers-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/GlobalEventHandlers-impl'>;
@@ -2006,14 +2006,14 @@ declare module 'jsdom/lib/jsdom/living/nodes/HTMLAreaElement-impl.js' {
 declare module 'jsdom/lib/jsdom/living/nodes/HTMLAudioElement-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLAudioElement-impl'>;
 }
-declare module 'jsdom/lib/jsdom/living/nodes/HTMLBRElement-impl.js' {
-  declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLBRElement-impl'>;
-}
 declare module 'jsdom/lib/jsdom/living/nodes/HTMLBaseElement-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLBaseElement-impl'>;
 }
 declare module 'jsdom/lib/jsdom/living/nodes/HTMLBodyElement-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLBodyElement-impl'>;
+}
+declare module 'jsdom/lib/jsdom/living/nodes/HTMLBRElement-impl.js' {
+  declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLBRElement-impl'>;
 }
 declare module 'jsdom/lib/jsdom/living/nodes/HTMLButtonElement-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLButtonElement-impl'>;
@@ -2023,9 +2023,6 @@ declare module 'jsdom/lib/jsdom/living/nodes/HTMLCanvasElement-impl.js' {
 }
 declare module 'jsdom/lib/jsdom/living/nodes/HTMLCollection-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLCollection-impl'>;
-}
-declare module 'jsdom/lib/jsdom/living/nodes/HTMLDListElement-impl.js' {
-  declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLDListElement-impl'>;
 }
 declare module 'jsdom/lib/jsdom/living/nodes/HTMLDataElement-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLDataElement-impl'>;
@@ -2041,6 +2038,9 @@ declare module 'jsdom/lib/jsdom/living/nodes/HTMLDirectoryElement-impl.js' {
 }
 declare module 'jsdom/lib/jsdom/living/nodes/HTMLDivElement-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLDivElement-impl'>;
+}
+declare module 'jsdom/lib/jsdom/living/nodes/HTMLDListElement-impl.js' {
+  declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLDListElement-impl'>;
 }
 declare module 'jsdom/lib/jsdom/living/nodes/HTMLElement-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLElement-impl'>;
@@ -2063,14 +2063,14 @@ declare module 'jsdom/lib/jsdom/living/nodes/HTMLFrameElement-impl.js' {
 declare module 'jsdom/lib/jsdom/living/nodes/HTMLFrameSetElement-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLFrameSetElement-impl'>;
 }
-declare module 'jsdom/lib/jsdom/living/nodes/HTMLHRElement-impl.js' {
-  declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLHRElement-impl'>;
-}
 declare module 'jsdom/lib/jsdom/living/nodes/HTMLHeadElement-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLHeadElement-impl'>;
 }
 declare module 'jsdom/lib/jsdom/living/nodes/HTMLHeadingElement-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLHeadingElement-impl'>;
+}
+declare module 'jsdom/lib/jsdom/living/nodes/HTMLHRElement-impl.js' {
+  declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLHRElement-impl'>;
 }
 declare module 'jsdom/lib/jsdom/living/nodes/HTMLHtmlElement-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLHtmlElement-impl'>;
@@ -2087,14 +2087,14 @@ declare module 'jsdom/lib/jsdom/living/nodes/HTMLImageElement-impl.js' {
 declare module 'jsdom/lib/jsdom/living/nodes/HTMLInputElement-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLInputElement-impl'>;
 }
-declare module 'jsdom/lib/jsdom/living/nodes/HTMLLIElement-impl.js' {
-  declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLLIElement-impl'>;
-}
 declare module 'jsdom/lib/jsdom/living/nodes/HTMLLabelElement-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLLabelElement-impl'>;
 }
 declare module 'jsdom/lib/jsdom/living/nodes/HTMLLegendElement-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLLegendElement-impl'>;
+}
+declare module 'jsdom/lib/jsdom/living/nodes/HTMLLIElement-impl.js' {
+  declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLLIElement-impl'>;
 }
 declare module 'jsdom/lib/jsdom/living/nodes/HTMLLinkElement-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLLinkElement-impl'>;
@@ -2117,11 +2117,11 @@ declare module 'jsdom/lib/jsdom/living/nodes/HTMLMeterElement-impl.js' {
 declare module 'jsdom/lib/jsdom/living/nodes/HTMLModElement-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLModElement-impl'>;
 }
-declare module 'jsdom/lib/jsdom/living/nodes/HTMLOListElement-impl.js' {
-  declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLOListElement-impl'>;
-}
 declare module 'jsdom/lib/jsdom/living/nodes/HTMLObjectElement-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLObjectElement-impl'>;
+}
+declare module 'jsdom/lib/jsdom/living/nodes/HTMLOListElement-impl.js' {
+  declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLOListElement-impl'>;
 }
 declare module 'jsdom/lib/jsdom/living/nodes/HTMLOptGroupElement-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/nodes/HTMLOptGroupElement-impl'>;
@@ -2249,14 +2249,14 @@ declare module 'jsdom/lib/jsdom/living/post-message.js' {
 declare module 'jsdom/lib/jsdom/living/register-elements.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/register-elements'>;
 }
+declare module 'jsdom/lib/jsdom/living/traversal/helpers.js' {
+  declare module.exports: $Exports<'jsdom/lib/jsdom/living/traversal/helpers'>;
+}
 declare module 'jsdom/lib/jsdom/living/traversal/NodeIterator-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/traversal/NodeIterator-impl'>;
 }
 declare module 'jsdom/lib/jsdom/living/traversal/TreeWalker-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/traversal/TreeWalker-impl'>;
-}
-declare module 'jsdom/lib/jsdom/living/traversal/helpers.js' {
-  declare module.exports: $Exports<'jsdom/lib/jsdom/living/traversal/helpers'>;
 }
 declare module 'jsdom/lib/jsdom/living/window/External-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/window/External-impl'>;
@@ -2267,11 +2267,11 @@ declare module 'jsdom/lib/jsdom/living/window/History-impl.js' {
 declare module 'jsdom/lib/jsdom/living/window/Location-impl.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/window/Location-impl'>;
 }
-declare module 'jsdom/lib/jsdom/living/window/SessionHistory.js' {
-  declare module.exports: $Exports<'jsdom/lib/jsdom/living/window/SessionHistory'>;
-}
 declare module 'jsdom/lib/jsdom/living/window/navigation.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/window/navigation'>;
+}
+declare module 'jsdom/lib/jsdom/living/window/SessionHistory.js' {
+  declare module.exports: $Exports<'jsdom/lib/jsdom/living/window/SessionHistory'>;
 }
 declare module 'jsdom/lib/jsdom/living/xhr-sync-worker.js' {
   declare module.exports: $Exports<'jsdom/lib/jsdom/living/xhr-sync-worker'>;

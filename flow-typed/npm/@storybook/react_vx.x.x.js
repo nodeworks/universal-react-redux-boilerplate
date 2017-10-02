@@ -1,4 +1,4 @@
-// flow-typed signature: 8d64c96488c0293b5b01cc90280acfae
+// flow-typed signature: 581bbc83edd79385d9e56ffd49f62e3d
 // flow-typed version: <<STUB>>/@storybook/react_v^3.2.8/flow_v0.54.1
 
 /**
@@ -110,10 +110,6 @@ declare module '@storybook/react/dist/server/config' {
   declare module.exports: any;
 }
 
-declare module '@storybook/react/dist/server/config/WatchMissingNodeModulesPlugin' {
-  declare module.exports: any;
-}
-
 declare module '@storybook/react/dist/server/config/babel' {
   declare module.exports: any;
 }
@@ -135,6 +131,10 @@ declare module '@storybook/react/dist/server/config/polyfills' {
 }
 
 declare module '@storybook/react/dist/server/config/utils' {
+  declare module.exports: any;
+}
+
+declare module '@storybook/react/dist/server/config/WatchMissingNodeModulesPlugin' {
   declare module.exports: any;
 }
 
@@ -233,9 +233,6 @@ declare module '@storybook/react/dist/server/build.js' {
 declare module '@storybook/react/dist/server/config.js' {
   declare module.exports: $Exports<'@storybook/react/dist/server/config'>;
 }
-declare module '@storybook/react/dist/server/config/WatchMissingNodeModulesPlugin.js' {
-  declare module.exports: $Exports<'@storybook/react/dist/server/config/WatchMissingNodeModulesPlugin'>;
-}
 declare module '@storybook/react/dist/server/config/babel.js' {
   declare module.exports: $Exports<'@storybook/react/dist/server/config/babel'>;
 }
@@ -253,6 +250,9 @@ declare module '@storybook/react/dist/server/config/polyfills.js' {
 }
 declare module '@storybook/react/dist/server/config/utils.js' {
   declare module.exports: $Exports<'@storybook/react/dist/server/config/utils'>;
+}
+declare module '@storybook/react/dist/server/config/WatchMissingNodeModulesPlugin.js' {
+  declare module.exports: $Exports<'@storybook/react/dist/server/config/WatchMissingNodeModulesPlugin'>;
 }
 declare module '@storybook/react/dist/server/config/webpack.config.js' {
   declare module.exports: $Exports<'@storybook/react/dist/server/config/webpack.config'>;

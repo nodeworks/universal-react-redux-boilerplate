@@ -1,4 +1,4 @@
-// flow-typed signature: 4159ab1da109db6fad1e4f8512cd77ec
+// flow-typed signature: 6404507e3f21af774ef7b7000e7f9861
 // flow-typed version: <<STUB>>/bootstrap_v4.0.0-alpha.6/flow_v0.54.1
 
 /**
@@ -22,10 +22,6 @@ declare module 'bootstrap' {
  * require those files directly. Feel free to delete any files that aren't
  * needed.
  */
-declare module 'bootstrap/Gruntfile' {
-  declare module.exports: any;
-}
-
 declare module 'bootstrap/dist/js/bootstrap' {
   declare module.exports: any;
 }
@@ -39,6 +35,10 @@ declare module 'bootstrap/grunt/change-version' {
 }
 
 declare module 'bootstrap/grunt/postcss' {
+  declare module.exports: any;
+}
+
+declare module 'bootstrap/Gruntfile' {
   declare module.exports: any;
 }
 
@@ -179,9 +179,6 @@ declare module 'bootstrap/js/tests/vendor/qunit' {
 }
 
 // Filename aliases
-declare module 'bootstrap/Gruntfile.js' {
-  declare module.exports: $Exports<'bootstrap/Gruntfile'>;
-}
 declare module 'bootstrap/dist/js/bootstrap.js' {
   declare module.exports: $Exports<'bootstrap/dist/js/bootstrap'>;
 }
@@ -193,6 +190,9 @@ declare module 'bootstrap/grunt/change-version.js' {
 }
 declare module 'bootstrap/grunt/postcss.js' {
   declare module.exports: $Exports<'bootstrap/grunt/postcss'>;
+}
+declare module 'bootstrap/Gruntfile.js' {
+  declare module.exports: $Exports<'bootstrap/Gruntfile'>;
 }
 declare module 'bootstrap/js/dist/alert.js' {
   declare module.exports: $Exports<'bootstrap/js/dist/alert'>;

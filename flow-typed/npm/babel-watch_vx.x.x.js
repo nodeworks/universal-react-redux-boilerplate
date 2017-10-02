@@ -1,4 +1,4 @@
-// flow-typed signature: 7c947398bf1f0d6c063da0cc03d289d9
+// flow-typed signature: 80caa7569b4ef74ba548638e6add9afb
 // flow-typed version: <<STUB>>/babel-watch_v^2.0.6/flow_v0.54.1
 
 /**
@@ -22,6 +22,14 @@ declare module 'babel-watch' {
  * require those files directly. Feel free to delete any files that aren't
  * needed.
  */
+declare module 'babel-watch/babel-watch' {
+  declare module.exports: any;
+}
+
+declare module 'babel-watch/runner' {
+  declare module.exports: any;
+}
+
 declare module 'babel-watch/TestProjects/a/src/api/facets' {
   declare module.exports: any;
 }
@@ -50,15 +58,13 @@ declare module 'babel-watch/TestProjects/a/src/models/facets' {
   declare module.exports: any;
 }
 
-declare module 'babel-watch/babel-watch' {
-  declare module.exports: any;
-}
-
-declare module 'babel-watch/runner' {
-  declare module.exports: any;
-}
-
 // Filename aliases
+declare module 'babel-watch/babel-watch.js' {
+  declare module.exports: $Exports<'babel-watch/babel-watch'>;
+}
+declare module 'babel-watch/runner.js' {
+  declare module.exports: $Exports<'babel-watch/runner'>;
+}
 declare module 'babel-watch/TestProjects/a/src/api/facets.js' {
   declare module.exports: $Exports<'babel-watch/TestProjects/a/src/api/facets'>;
 }
@@ -79,10 +85,4 @@ declare module 'babel-watch/TestProjects/a/src/middleware/index.js' {
 }
 declare module 'babel-watch/TestProjects/a/src/models/facets.js' {
   declare module.exports: $Exports<'babel-watch/TestProjects/a/src/models/facets'>;
-}
-declare module 'babel-watch/babel-watch.js' {
-  declare module.exports: $Exports<'babel-watch/babel-watch'>;
-}
-declare module 'babel-watch/runner.js' {
-  declare module.exports: $Exports<'babel-watch/runner'>;
 }

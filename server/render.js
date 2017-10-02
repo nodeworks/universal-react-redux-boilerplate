@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/server'
 import { Provider } from 'react-redux'
 import { flushChunkNames } from 'react-universal-component/server'
 import flushChunks from 'webpack-flush-chunks'
+import { Helmet } from 'react-helmet'
 import ejs from 'ejs'
 import configureStore from './configureStore'
 import App from '../src/app'
@@ -13,6 +14,10 @@ export default ({ clientStats }) => async (req, res) => {
 
   const app = createApp(App, store)
   const appString = ReactDOM.renderToString(app)
+  const helmet = Helmet.renderStatic()
+  const helmetTitle = helmet.title.toString()
+  const helmetMeta = helmet.meta.toString()
+  const helmetLink = helmet.link.toString()
   const stateJson = JSON.stringify(store.getState())
   const chunkNames = flushChunkNames()
   const { js, styles, cssHash } = flushChunks(clientStats, { chunkNames })
@@ -21,7 +26,7 @@ export default ({ clientStats }) => async (req, res) => {
   console.log('CHUNK NAMES', chunkNames) // eslint-disable-line no-console
 
   ejs.renderFile('./src/templates/index.ejs',
-    { js, styles, cssHash, appString, stateJson },
+    { js, styles, cssHash, appString, stateJson, helmetTitle, helmetMeta, helmetLink },
     (err, str) => res.send(str))
 }
 
