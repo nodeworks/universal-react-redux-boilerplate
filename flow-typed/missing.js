@@ -10,6 +10,10 @@ declare module 'react-universal-component' {
   declare module.exports: any;
 }
 
+declare module 'transition-group' {
+  declare module.exports: any;
+}
+
 declare var module : {
   hot : {
     accept(path:string, callback:() => void): void;

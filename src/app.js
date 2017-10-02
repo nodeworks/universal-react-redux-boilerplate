@@ -11,6 +11,7 @@ import './assets/styles/main.scss'
 
 type Props = {
   page: string,
+  direction: string,
   isLoading: boolean
 }
 

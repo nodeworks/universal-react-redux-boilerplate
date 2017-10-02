@@ -13,7 +13,7 @@ import configureStore from '../config/configureStore'
 import '../assets/styles/main.scss'
 
 const history = createHistory()
-const { store } = configureStore(history)
+const { store } = configureStore(history, {})
 
 const stories = storiesOf('Header', module)
 stories.addDecorator(withKnobs)
