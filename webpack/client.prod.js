@@ -19,8 +19,7 @@ const fonts = []
   ['woff2', 'application/font-woff2'],
   ['otf', 'font/opentype'],
   ['ttf', 'application/octet-stream'],
-  ['eot', 'application/vnd.ms-fontobject'],
-  ['svg', 'image/svg+xml']
+  ['eot', 'application/vnd.ms-fontobject']
 ].forEach(font => {
   const extension = font[0]
   const mimetype = font[1]
@@ -59,8 +58,20 @@ module.exports = {
         use: 'babel-loader'
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|gif)$/,
         loader: 'url-loader?limit=200000'
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              name: 'images/[name].[ext]',
+              mimetype: 'image/svg+xml'
+            }
+          }
+        ]
       },
       {
         test: /\.(sass|scss)$/,
