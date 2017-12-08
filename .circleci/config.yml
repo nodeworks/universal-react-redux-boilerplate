@@ -29,7 +29,7 @@ jobs:
           command: |
             if [ -n "${STACK_ID+1}" ]; then
               if [ "${CIRCLE_BRANCH}" == "master" ]; then
-                export PATH=~/.local/bin:$PATH && aws opsworks --region "us-east-1" create-deployment --stack-id ${STACK_ID} --app-id ${APP_ID} --layer-ids "${LAYER_ID}" --command "{\"Name\":\"deploy\"}";
+                export PATH=~/.local/bin:$PATH && export GIT_COMMIT_DESC=$(git log --pretty=format:"%s -- %h" -n 1 $CIRCLE_SHA1) && aws opsworks --region "us-east-1" create-deployment --stack-id ${STACK_ID} --app-id ${APP_ID} --comment "${GIT_COMMIT_DESC}" --command "{\"Name\":\"deploy\"}";
               else
                   echo "Not master branch so not deploying"
               fi

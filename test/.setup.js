@@ -7,6 +7,18 @@ const { document } = (new JSDOM('')).window;
 
 var exposedProperties = ['window', 'navigator', 'document'];
 
+require.extensions['.css'] = function () {
+  return null;
+};
+
+require.extensions['.png'] = function () {
+  return null;
+};
+
+require.extensions['.jpg'] = function () {
+  return null;
+};
+
 global.document = document;
 global.window = document.defaultView;
 Object.keys(document.defaultView).forEach((property) => {
