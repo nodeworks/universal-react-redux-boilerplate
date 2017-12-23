@@ -21,7 +21,7 @@ type State = {}
 
 const listItems = [
   { title: 'Profile', val: 'HOME', type: 'item' },
-  { title: 'Settings', val: 'HOME', type: 'item' },
+  { title: 'Settings', val: 'SUBPAGE', type: 'item' },
   { type: 'divider', val: 'divider' },
   { title: 'Logout', val: 'LOGOUT', type: 'item' }
 ]
