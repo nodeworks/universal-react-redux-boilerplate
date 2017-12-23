@@ -11,7 +11,7 @@ const TWILIO_ID = process.env.TWILIO_ID || false
 const TWILIO_SECRET = process.env.TWILIO_SECRET || ''
 
 let client = false
-if (TWILIO_ID) {
+if (TWILIO_ID && TWILIO_ID !== 'false') {
   client = new Twilio(TWILIO_ID, TWILIO_SECRET)
 }
 

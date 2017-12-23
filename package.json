@@ -170,7 +170,7 @@
     "jsdom": "^11.2.0",
     "lint-staged": "^3.4.0",
     "mocha": "^3.5.0",
-    "node-sass": "^4.5.3",
+    "node-sass": "^4.7.2",
     "npm-run-all": "^4.1.1",
     "phantomjs-prebuilt": "^2.1.15",
     "prettier": "^1.4.4",
