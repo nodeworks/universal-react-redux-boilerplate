@@ -27,7 +27,7 @@ class Footer extends Component<Props, State> {
   render() {
     return (
       <footer className='app-footer col-12 py-2'>
-        {this.props.siteTitle} &copy; {this.state.year} SpokeDC
+        {this.props.siteTitle} &copy; {this.state.year} React-Drupal
       </footer>
     )
   }
