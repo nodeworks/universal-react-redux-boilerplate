@@ -1,23 +1,57 @@
 /* @flow */
 import { NOT_FOUND } from 'redux-first-router'
 
-export const goToPage = (type: string, category: string) => ({
-  type,
-  payload: category && { category }
-})
+export function goToPage(type: string, category: string) {
+  return {
+    type,
+    payload: category && { category }
+  }
+}
 
-export const goHome = () => ({
-  type: 'HOME'
-})
+export function goHome() {
+  return {
+    type: 'DASHBOARD'
+  }
+}
 
-export const goToAdmin = () => ({
-  type: 'ADMIN'
-})
+export function goToAdmin() {
+  return {
+    type: 'DASHBOARD'
+  }
+}
 
-export const goToSubpage = () => ({
-  type: 'SUBPAGE'
-})
+export function notFound() {
+  return {
+    type: NOT_FOUND
+  }
+}
 
-export const notFound = () => ({
-  type: NOT_FOUND
-})
+export function apiRequesting(entity: string) {
+  return {
+    type: 'API_REQUESTING',
+    entity
+  }
+}
+
+export function apiProgress(data: any) {
+  return {
+    type: 'API_DATA',
+    data
+  }
+}
+
+export function apiComplete(entity: string, res: Object) {
+  return {
+    type: 'API_COMPLETE',
+    entity,
+    results: res
+  }
+}
+
+export function apiError(entity: string, err: Object) {
+  return {
+    type: 'API_ERROR',
+    entity,
+    err
+  }
+}

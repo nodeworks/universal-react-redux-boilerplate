@@ -50,7 +50,7 @@ const fonts = []
 module.exports = {
   name: 'server',
   target: 'node',
-  devtool: 'eval',
+  devtool: 'inline-source-map',
   entry: ['babel-polyfill', 'fetch-everywhere', res('../server/render.js')],
   externals,
   output: {
@@ -61,6 +61,11 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.(graphql|gql)$/,
+        exclude: /node_modules/,
+        loader: 'graphql-tag/loader'
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,

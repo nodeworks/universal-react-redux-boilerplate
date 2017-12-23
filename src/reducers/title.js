@@ -1,21 +1,12 @@
-export default (state = 'RFR Demo', action = {}) => {
+export default (state = 'React-Drupal Boilerplate', action = {}) => {
   switch (action.type) {
     case 'HOME':
-      return 'RFR Demo'
-    case 'LIST':
-      return `RFR: ${capitalize(action.payload.category)}`
-    case 'VIDEO':
-      return `RFR: ${capitalize(action.payload.slug)}`
+      return 'Welcome | React-Drupal Boilerplate'
     case 'LOGIN':
-      return 'RFR Login'
-    case 'ADMIN':
-      return 'RFR Admin'
+      return 'Login | React-Drupal Boilerplate'
+    case 'LOGOUT':
+      return 'Logout | React-Drupal Boilerplate'
     default:
       return state
   }
 }
-
-const capitalize = str =>
-  str.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
-
-// RFR automatically changes the document.title for you :)

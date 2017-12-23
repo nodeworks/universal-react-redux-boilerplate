@@ -26,13 +26,19 @@ class Footer extends Component<Props, State> {
 
   render() {
     return (
-      <footer className='app-footer'>
-        {this.props.siteTitle} &copy; {this.state.year} Rob Lee
+      <footer className='app-footer col-12 py-2'>
+        {this.props.siteTitle} &copy; {this.state.year} SpokeDC
       </footer>
     )
   }
 }
 
-export default connect(state => ({
+const mapStateToProps = state => ({
   siteTitle: state.app.title
-}))(Footer)
+})
+
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  dispatch
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Footer)

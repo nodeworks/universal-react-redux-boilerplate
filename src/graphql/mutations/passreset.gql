@@ -1,0 +1,5 @@
+mutation PassReset($mail: String) {
+  passreset(mail: $mail) {
+    uuid
+  }
+}

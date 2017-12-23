@@ -14,6 +14,61 @@ declare module 'transition-group' {
   declare module.exports: any;
 }
 
+declare module 'react-apollo' {
+  declare module.exports: any;
+}
+
+declare module 'graphql-tag' {
+  declare module.exports: any;
+}
+
+declare module 'apollo-client' {
+  declare module.exports: any;
+}
+
+declare module 'apollo-link-http' {
+  declare module.exports: any;
+}
+
+declare module 'apollo-cache-inmemory' {
+  declare module.exports: any;
+}
+
+declare module 'react-google-charts' {
+  declare module.exports: any;
+}
+
+declare module 'passport' {
+  declare module.exports: any;
+}
+
+declare module 'passport-local' {
+  declare module.exports: any;
+}
+
+declare module 'react-apollo' {
+  declare module.exports: any;
+}
+
+declare module 'react-dates' {
+  declare module.exports: any;
+}
+
+declare module 'react-dates/initialize' {
+  declare module.exports: any;
+}
+
+declare module 'moment' {
+  declare module.exports: any;
+}
+
+declare module '*.graphql' {
+  import type {DocumentNode} from 'graphql';
+
+  const value: DocumentNode;
+export = value;
+}
+
 declare var module : {
   hot : {
     accept(path:string, callback:() => void): void;

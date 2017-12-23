@@ -1,15 +1,15 @@
 /* @flow */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { NavLink } from 'redux-first-router-link'
 import {
   Nav,
   NavItem,
-  NavDropdown,
+  Dropdown,
   NavbarBrand,
   DropdownItem,
   DropdownToggle,
   DropdownMenu,
-  NavLink,
   Collapse,
   Container,
   Navbar,
@@ -19,7 +19,7 @@ type Props = {}
 
 type State = {
   isOpen: boolean,
-  dropdownOpen: boolean
+  subpage: Object
 }
 
 class Navigation extends Component<Props, State> {
@@ -34,7 +34,9 @@ class Navigation extends Component<Props, State> {
     this.toggleItem = this.toggleItem.bind(this)
     this.state = {
       isOpen: false,
-      dropdownOpen: false
+      subpage: {
+        dropdownOpen: false
+      }
     }
   }
 
@@ -44,41 +46,37 @@ class Navigation extends Component<Props, State> {
     })
   }
 
-  toggleItem() {
+  toggleItem(item: string) {
     this.setState({
-      dropdownOpen: !this.state.dropdownOpen
+      [item]: {
+        dropdownOpen: !this.state[item].dropdownOpen
+      }
     })
   }
 
   render() {
     return (
-      <Navbar color='faded' light toggleable>
+      <Navbar className='d-md-none px-0' color='faded' light>
         <Container>
-          <NavbarToggler right onClick={this.toggle} />
-          <NavbarBrand href='/'>MyApp</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className='ml-auto' navbar>
-              <NavItem>
-                <NavLink href='#'>Inclusive Design</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href='https://github.com/reactstrap/reactstrap'>Github</NavLink>
-              </NavItem>
-              <NavDropdown
-                isOpen={this.state.dropdownOpen}
-                toggle={this.toggleItem}
+            <Nav className='ml-auto mt-4' navbar>
+              <NavLink exact to='/' className='py-2'>
+                <span className='nav-text'>Home</span>
+              </NavLink>
+              <Dropdown
+                isOpen={this.state.subpage.dropdownOpen}
+                toggle={() => this.toggleItem('subpage')}
+                nav
               >
                 <DropdownToggle nav caret>
-                  Dropdown
+                  Subpage
                 </DropdownToggle>
                 <DropdownMenu>
-                  <DropdownItem header>Header</DropdownItem>
-                  <DropdownItem>Action</DropdownItem>
-                  <DropdownItem>Another Action</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Another Action</DropdownItem>
+                  <DropdownItem><NavLink to='/'><span className='nav-text'>Subpage 1</span></NavLink></DropdownItem>
+                  <DropdownItem><NavLink to='/'><span className='nav-text'>Subpage 2</span></NavLink></DropdownItem>
                 </DropdownMenu>
-              </NavDropdown>
+              </Dropdown>
             </Nav>
           </Collapse>
         </Container>

@@ -3,8 +3,9 @@ import { NOT_FOUND } from 'redux-first-router'
 
 const components = {
   HOME: 'Home',
-  SUBPAGE: 'Subpage',
   LOGIN: 'Login',
+  LOGOUT: 'Login',
+  PASSWORD_RESET: 'Login',
   [NOT_FOUND]: 'NotFound'
 }
 

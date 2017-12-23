@@ -1,15 +1,14 @@
 /* @flow */
+const sectionTitles = {
+  home: 'Home'
+}
+
 export default {
   HOME: {
-    path: '/'
+    path: '/',
+    breadcrumb: [sectionTitles.home]
   },
-  SUBPAGE: {
-    path: '/subpage',
-    thunk: (dispatch: Function, getState: Function) => {
-      const { title } = getState()
-      dispatch({ type: 'HOME', payload: { title } })
-    },
-    component: 'Subpage'
-  },
-  LOGIN: '/login'
+  LOGIN: '/login',
+  LOGOUT: '/logout',
+  PASSWORD_RESET: '/user/reset/:id/:timestamp/:token'
 }

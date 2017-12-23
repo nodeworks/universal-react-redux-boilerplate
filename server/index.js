@@ -6,36 +6,47 @@ import webpack from 'webpack'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 import webpackHotServerMiddleware from 'webpack-hot-server-middleware'
+import expressGraphQL from 'express-graphql'
 import clientConfig from '../webpack/client.dev'
 import serverConfig from '../webpack/server.dev'
+import schema from './graphql/schema';
 
 const DEV = process.env.NODE_ENV === 'development' // eslint-disable-line
 const publicPath = clientConfig.output.publicPath
 const outputPath = clientConfig.output.path
 const app = express()
 const server = require('http').Server(app)
-const io = require('socket.io')(server);
+const io = require('socket.io')(server)
+const session = require('express-session')
+const passport = require('passport')
+
+const PORT = process.env.PORT || ''
+const SESSION_SECRET = process.env.SESSION_SECRET || 'session_secret'
 
 app.use(compression())
 app.use(cookieParser())
 
-app.use((req, res, next) => {
-  const cookie = req.cookies.jwToken
-  const jwToken = 'fake' // TRY: set to 'real' to authenticate ADMIN route
+app.use(session({
+  resave: true,
+  saveUninitialized: true,
+  secret: SESSION_SECRET
+}))
 
-  if (cookie !== jwToken) {
-    res.cookie('jwToken', jwToken, { maxAge: 900000 })
-    req.cookies.jwToken = jwToken
-  }
+app.use(passport.initialize())
+app.use(passport.session())
 
-  next()
+app.use('/graphql', expressGraphQL({
+  schema,
+  graphiql: process.env.NODE_ENV !== 'production'
+}))
+
+app.use('/realtime', (req, res) => {
+  io.sockets.emit('orders', '')
+  res.status(200).end()
 })
 
 io.on('connection', socket => {
-  socket.on('bank', async () => {
-    // let creds = await BoA.getCreds(socket)
-    // let test2 = await BoA.getBankBalance(creds, socket)
-  })
+
 })
 
 // UNIVERSAL HMR + STATS HANDLING GOODNESS:
@@ -61,6 +72,6 @@ else {
   app.use(serverRender({ clientStats, outputPath }))
 }
 
-server.listen(3000, () => {
-  console.log('Listening @ http://localhost:3000/') // eslint-disable-line no-console
+server.listen(PORT, () => {
+  console.log(`Listening @ http://localhost:${PORT}`) // eslint-disable-line no-console
 })

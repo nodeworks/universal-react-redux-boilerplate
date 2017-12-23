@@ -1,0 +1,5 @@
+mutation PassUpdate($id: Int!, $timestamp: Int!, $token: String!, $password: String!) {
+  passupdate(id: $id, timestamp: $timestamp, token: $token, password: $password) {
+    uuid
+  }
+}

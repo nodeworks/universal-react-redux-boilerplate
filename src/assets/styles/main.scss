@@ -10,7 +10,17 @@ $fa-font-path: '~font-awesome/fonts/';
 @import '~font-awesome/scss/font-awesome';
 
 // React Redux Toastr
+$successBgColor: #8a9748;
+$infoBgColor: #58abc3;
+$warningBgColor: #f1b930;
+$errorBgColor: #b54730;
 @import '~react-redux-toastr/src/styles/index';
+
+// React Joyride
+@import '~react-joyride/lib/react-joyride';
 
 // Global app-wide variables
 @import 'global';
+
+// React Dates
+@import 'vendor/react-dates';

@@ -33,7 +33,7 @@ let fonts = []
 module.exports = {
   name: 'client',
   target: 'web',
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
   entry: [
     'babel-polyfill',
     'fetch-everywhere',
@@ -49,6 +49,11 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.(graphql|gql)$/,
+        exclude: /node_modules/,
+        loader: 'graphql-tag/loader'
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -127,20 +132,20 @@ module.exports = {
         NODE_ENV: JSON.stringify('development')
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        screw_ie8: true,
-        warnings: false
-      },
-      mangle: {
-        screw_ie8: true
-      },
-      output: {
-        screw_ie8: true,
-        comments: false
-      },
-      sourceMap: true
-    }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress: {
+    //     screw_ie8: true,
+    //     warnings: false
+    //   },
+    //   mangle: {
+    //     screw_ie8: true
+    //   },
+    //   output: {
+    //     screw_ie8: true,
+    //     comments: false
+    //   },
+    //   sourceMap: true
+    // }),
     new AutoDllPlugin({
       context: path.join(__dirname, '..'),
       filename: '[name].js',
@@ -168,8 +173,11 @@ module.exports = {
       {
         open: false,
         host: 'localhost',
-        port: 3001,
-        proxy: 'http://localhost:3000/'
+        port: 3006,
+        proxy: `http://localhost:3005`,
+        ui: {
+          port: 3007
+        }
       },
       {
         reload: false

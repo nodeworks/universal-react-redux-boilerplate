@@ -1,6 +1,7 @@
+/* @flow */
 import React from 'react'
 
-export default error =>
+export default (error: Object) =>
   (<div>
-    ERROR: {error.message}
+    ERROR: {error.error.stack}
   </div>)

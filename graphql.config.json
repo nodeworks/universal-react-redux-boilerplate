@@ -1,0 +1,17 @@
+{
+  "schema": {
+    "file": "graphql.schema.json"
+  },
+  "endpoints" : [
+    {
+      "name": "SellerHub Dev (http://localhost:3005/graphql)",
+      "url": "http://localhost:3005/graphql",
+      "options" : {
+        "headers": {
+          "user-agent" : "JS GraphQL"
+        }
+      }
+    }
+  ]
+
+}

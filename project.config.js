@@ -1,6 +1,6 @@
 /* @flow */
 module.exports = {
   globals: {
-    title: 'React Boilerplate'
+    title: 'React-Drupal Boilerplate'
   }
 }

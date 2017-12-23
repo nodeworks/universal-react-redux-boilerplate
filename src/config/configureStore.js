@@ -8,11 +8,13 @@ import hooks from '../hooks'
 import * as reducers from '../reducers'
 import * as actionCreators from '../actions'
 
-export default (history: Object, preLoadedState: Object) => {
+export default (initialEntries: Object, preLoadedState: Object) => {
   const { reducer, middleware, enhancer, thunk } = connectRoutes(
-    history,
     routesMap,
-    hooks
+    {
+      ...hooks,
+      ...initialEntries
+    }
   )
 
   const rootReducer = combineReducers({ ...reducers, location: reducer })

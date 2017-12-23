@@ -1,0 +1,86 @@
+mutation Logout {
+  logout {
+    user_id
+    uuid
+    goal
+    external_id
+    is_admin
+    is_captain
+    is_seller
+    team {
+      id
+      uuid
+      name
+      status
+      created
+      changed
+      external_id
+      bio
+      image {
+        id
+        uuid
+        uri
+        filename
+        filesize
+        status
+        created
+        changed
+      }
+      image_alt
+      image_title
+      image_height
+      image_width
+      manager {
+        user_id
+        uuid
+        goal
+        external_id
+        is_admin
+        is_captain
+        is_seller
+        bio
+        image {
+          id
+          uuid
+          uri
+          filename
+          filesize
+          status
+          created
+          changed
+        }
+        prefix
+        first_name
+        last_name
+        username
+        mail
+        status
+        created
+        changed
+        last_login
+        roles
+      }
+    }
+    bio
+    image {
+      id
+      uuid
+      uri
+      filename
+      filesize
+      status
+      created
+      changed
+    }
+    prefix
+    first_name
+    last_name
+    username
+    mail
+    status
+    created
+    changed
+    last_login
+    roles
+  }
+}

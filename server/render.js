@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom/server'
 import { Provider } from 'react-redux'
 import { flushChunkNames } from 'react-universal-component/server'
 import flushChunks from 'webpack-flush-chunks'
+import { ApolloProvider } from 'react-apollo'
+import { ApolloClient } from 'apollo-client'
+import { HttpLink } from 'apollo-link-http'
+import { InMemoryCache } from 'apollo-cache-inmemory'
 import { Helmet } from 'react-helmet'
 import ejs from 'ejs'
 import configureStore from './configureStore'
@@ -30,8 +34,19 @@ export default ({ clientStats }) => async (req, res) => {
     (err, str) => res.send(str))
 }
 
+const client = new ApolloClient({
+  ssrMode: true,
+  link: new HttpLink({
+    uri: '/graphql',
+    credentials: 'same-origin'
+  }),
+  cache: new InMemoryCache()
+})
+
 const createApp = (App, store) => (
   <Provider store={store}>
-    <App />
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
   </Provider>
 )

@@ -1,0 +1,14 @@
+query Email($id: String!, $type: String!) {
+  email(id: $id, type: $type) {
+    id
+    to
+    from
+    result
+    reply_to
+    body
+    params {
+      title
+      message
+    }
+  }
+}

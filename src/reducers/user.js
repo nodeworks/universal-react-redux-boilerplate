@@ -1,2 +1,2 @@
-export default (state = { roles: ['member'] }) => state
+export default (state = { roles: ['anonymous'] }) => state
 
