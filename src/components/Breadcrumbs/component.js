@@ -10,7 +10,7 @@ const Breadcrumbs = ({ items }: Props) => (
   <ul className='list-inline my-0 d-md-inline-flex d-none'>
     <li className='list-inline-item'>
       <Link to='/'>
-        <i className='fa fa-home' aria-hidden='true' /> Pies for Good, DC
+        <i className='fa fa-home' aria-hidden='true' /> React-Drupal
       </Link>
     </li>
     {items}

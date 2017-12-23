@@ -250,7 +250,7 @@ class Login extends Component<Props, State> {
     })
     .then(() => {
       if (this.props.data.user) {
-        this.props.dispatch({ type: 'DASHBOARD' })
+        this.props.dispatch({ type: 'HOME' })
       }
     })
     .catch(res => {
@@ -284,7 +284,7 @@ class Login extends Component<Props, State> {
             this.loginForm = loginForm
           }}
         >
-          <h1 className='text-center'>SellerHub</h1>
+          <h1 className='text-center'>React-Drupal</h1>
           <div className='form'>
             <FlashMessages errors={this.state.errors} messages={this.state.messages} />
             {this.state.passReset
