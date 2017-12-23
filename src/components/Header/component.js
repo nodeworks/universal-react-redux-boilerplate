@@ -7,7 +7,7 @@ import LogOutMutation from '../../graphql/mutations/logout.gql'
 import currentuser from '../../graphql/queries/currentuser.gql'
 import UserMenu from '../UserMenu'
 import Breadcrumbs from '../Breadcrumbs'
-import Avatar from '../UserMenu/rob.jpg'
+import Avatar from '../UserMenu/person.png'
 import Navigation from '../Navigation'
 
 type Props = {
