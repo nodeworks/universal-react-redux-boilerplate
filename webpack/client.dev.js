@@ -7,6 +7,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const DotenvPlugin = require('webpack-dotenv-plugin')
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const env = require('node-env-file')
 
 let fonts = []
 ;[
@@ -28,6 +29,12 @@ let fonts = []
       mimetype
     }
   })
+})
+
+env(path.resolve(__dirname, '../.env'), {
+  verbose: false,
+  overwrite: false,
+  raise: false
 })
 
 module.exports = {
@@ -173,10 +180,10 @@ module.exports = {
       {
         open: false,
         host: 'localhost',
-        port: 3006,
-        proxy: `http://localhost:3005`,
+        port: parseInt(process.env.PORT) + 1,
+        proxy: `http://localhost:${process.env.PORT}`,
         ui: {
-          port: 3007
+          port: parseInt(process.env.PORT) + 2
         }
       },
       {
