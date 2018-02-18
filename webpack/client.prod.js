@@ -6,6 +6,8 @@ const AutoDllPlugin = require('autodll-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const DotenvPlugin = require('webpack-dotenv-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const multi = require('multi-loader')
+const combineLoaders = require('webpack-combine-loaders')
 
 const extractStyles = new ExtractTextPlugin({
   filename: 'styles/[name].css',
@@ -35,10 +37,54 @@ const fonts = []
   })
 })
 
+const fileLoaders = combineLoaders([
+  {
+    loader: 'file-loader',
+    options: {
+      name: '[name].[ext]'
+    }
+  },
+  {
+    loader: 'image-webpack-loader',
+    options: {
+      mozjpeg: {
+        progressive: true,
+        quality: 65
+      },
+      optipng: {
+        enabled: false,
+      },
+      pngquant: {
+        quality: '65-90',
+        speed: 4
+      },
+      gifsicle: {
+        interlaced: false,
+      },
+    }
+  }
+])
+
+const fileLoadersWebP = combineLoaders([
+  {
+    loader: 'file-loader',
+    options: {
+      name: '[name].webp'
+    }
+  },
+  {
+    loader: 'image-webpack-loader',
+    options: {
+      webp: {
+        quality: 50
+      }
+    }
+  }
+])
+
 module.exports = {
   name: 'client',
   target: 'web',
-  devtool: 'source-map',
   entry: [
     'babel-polyfill',
     'fetch-everywhere',
@@ -64,7 +110,14 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif)$/,
-        loader: 'url-loader?limit=200000'
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]'
+            }
+          }
+        ]
       },
       {
         test: /\.svg$/,
@@ -79,7 +132,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(sass|scss)$/,
+        test: /^((?!\.local).)*\.scss$/,
         loader: extractStyles.extract({
           fallback: 'style-loader',
           use: [
@@ -96,12 +149,18 @@ module.exports = {
                   discardComments: {
                     removeAll: true
                   },
-                  discardUnused: false,
+                  discardUnused: true,
                   mergeIdents: false,
                   reduceIdents: false,
                   safe: true,
                   sourcemap: false
                 }
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: false
               }
             },
             {
@@ -113,11 +172,64 @@ module.exports = {
           ]
         })
       },
+      {
+        test: /\.local\.scss$/,
+        loader: extractStyles.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: false,
+                modules: true,
+                minimize: {
+                  autoprefixer: {
+                    add: true,
+                    remove: true,
+                    browsers: ['last 2 versions']
+                  },
+                  discardComments: {
+                    removeAll: true
+                  },
+                  discardUnused: true,
+                  mergeIdents: false,
+                  reduceIdents: false,
+                  safe: true,
+                  sourcemap: false
+                }
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: false
+              }
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: false
+              }
+            },
+            {
+              loader: 'sass-resources-loader',
+              options: {
+                resources: [
+                  path.resolve(__dirname, '../node_modules/bootstrap/scss/_functions.scss'),
+                  path.resolve(__dirname, '../node_modules/bootstrap/scss/_variables.scss'),
+                  path.resolve(__dirname, '../node_modules/bootstrap/scss/_mixins.scss'),
+                  path.resolve(__dirname, '../src/assets/styles/variables.scss')
+                ]
+              },
+            }
+          ]
+        })
+      },
       ...fonts
     ]
   },
   resolve: {
-    extensions: ['.js', '.css']
+    extensions: ['.js', '.css', '.scss']
   },
   plugins: [
     new StatsPlugin('stats.json'),
@@ -127,7 +239,6 @@ module.exports = {
       filename: '[name].[chunkhash].js',
       minChunks: Infinity
     }),
-
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production')
@@ -145,12 +256,33 @@ module.exports = {
         screw_ie8: true,
         comments: false
       },
-      sourceMap: true
+      sourceMap: false
     }),
-    new webpack.HashedModuleIdsPlugin(), // not needed for strategy to work (just good practice)
+    new webpack.HashedModuleIdsPlugin(),
     new AutoDllPlugin({
       context: path.join(__dirname, '..'),
       filename: '[name].js',
+      plugins: [
+        new webpack.optimize.UglifyJsPlugin({
+          compress: {
+            screw_ie8: true,
+            warnings: false
+          },
+          mangle: {
+            screw_ie8: true
+          },
+          output: {
+            screw_ie8: true,
+            comments: false
+          },
+          sourceMap: false
+        }),
+        new webpack.DefinePlugin({
+          'process.env': {
+            NODE_ENV: JSON.stringify('production')
+          }
+        })
+      ],
       entry: {
         vendor: [
           'react',
@@ -158,7 +290,6 @@ module.exports = {
           'react-redux',
           'redux',
           'history/createBrowserHistory',
-          'transition-group',
           'redux-first-router',
           'redux-first-router-link',
           'fetch-everywhere',

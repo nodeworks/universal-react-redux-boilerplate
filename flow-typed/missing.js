@@ -10,6 +10,10 @@ declare module 'react-universal-component' {
   declare module.exports: any;
 }
 
+declare module 'react-paginate' {
+  declare module.exports: any;
+}
+
 declare module 'transition-group' {
   declare module.exports: any;
 }
@@ -62,11 +66,8 @@ declare module 'moment' {
   declare module.exports: any;
 }
 
-declare module '*.graphql' {
-  import type {DocumentNode} from 'graphql';
-
-  const value: DocumentNode;
-export = value;
+declare module 'redux-form' {
+  declare module.exports: any;
 }
 
 declare var module : {

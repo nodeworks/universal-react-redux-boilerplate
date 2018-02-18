@@ -1,6 +1,6 @@
 import { GraphQLObjectType, GraphQLList, GraphQLString, GraphQLNonNull } from 'graphql'
-import UserType from './UserType'
-import EmailType from './EmailType'
+import UserType from './types/UserType'
+import EmailType from './types/EmailType'
 import axios from 'axios'
 
 const API_URL = process.env.API_URL || ''

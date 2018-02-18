@@ -5,16 +5,6 @@ query CurrentUser {
     goal
     external_id
     bio
-    image {
-      id
-      uuid
-      uri
-      filename
-      filesize
-      status
-      created
-      changed
-    }
     prefix
     first_name
     last_name

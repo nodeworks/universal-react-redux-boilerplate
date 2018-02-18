@@ -26,8 +26,10 @@ const UniversalComponent = universal(({ page }: Props) => import(`./pages/${page
 const Fade = ({ children, ...props }) => (
   <CSSTransition
     {...props}
-    timeout={1000}
+    timeout={700}
     classNames='fade'
+    onEntering={() => {$('footer').hide()}}
+    onEntered={() => {$('footer').fadeIn()}}
   >
     {children}
   </CSSTransition>

@@ -8,6 +8,8 @@ const DotenvPlugin = require('webpack-dotenv-plugin')
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const env = require('node-env-file')
+const multi = require('multi-loader')
+const combineLoaders = require('webpack-combine-loaders')
 
 let fonts = []
 ;[
@@ -37,10 +39,58 @@ env(path.resolve(__dirname, '../.env'), {
   raise: false
 })
 
+const fileLoaders = combineLoaders([
+  {
+    loader: 'file-loader',
+    options: {
+      name: '[name].[ext]'
+    }
+  },
+  {
+    loader: 'image-webpack-loader',
+    options: {
+      mozjpeg: {
+        progressive: true,
+        quality: 100
+      },
+      optipng: {
+        enabled: false,
+      },
+      pngquant: {
+        quality: '65-90',
+        speed: 4
+      },
+      gifsicle: {
+        interlaced: false,
+      },
+      webp: {
+        quality: 50
+      }
+    }
+  }
+])
+
+const fileLoadersWebP = combineLoaders([
+  {
+    loader: 'file-loader',
+    options: {
+      name: '[name].webp'
+    }
+  },
+  {
+    loader: 'image-webpack-loader',
+    options: {
+      webp: {
+        quality: 50
+      }
+    }
+  }
+])
+
 module.exports = {
   name: 'client',
   target: 'web',
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
   entry: [
     'babel-polyfill',
     'fetch-everywhere',
@@ -68,7 +118,33 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif)$/,
-        loader: 'url-loader?limit=200000'
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]'
+            }
+          },
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              mozjpeg: {
+                progressive: true,
+                quality: 50
+              },
+              optipng: {
+                enabled: false,
+              },
+              pngquant: {
+                quality: '65-90',
+                speed: 4
+              },
+              gifsicle: {
+                interlaced: false,
+              }
+            }
+          }
+        ]
       },
       {
         test: /\.svg$/,
@@ -83,14 +159,15 @@ module.exports = {
         ]
       },
       {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract({
+        test: /^((?!\.local).)*\.scss$/,
+        loader: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
             {
               loader: 'css-loader',
               options: {
                 sourceMap: true,
+                importLoaders: 1,
                 minimize: {
                   autoprefixer: {
                     add: true,
@@ -98,14 +175,20 @@ module.exports = {
                     browsers: ['last 2 versions']
                   },
                   discardComments: {
-                    removeAll: true
+                    removeAll: false
                   },
-                  discardUnused: false,
+                  discardUnused: true,
                   mergeIdents: false,
                   reduceIdents: false,
                   safe: true,
                   sourceMap: true
                 }
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: true
               }
             },
             {
@@ -115,13 +198,70 @@ module.exports = {
               }
             }
           ]
+        }))
+      },
+      {
+        test: /\.local\.scss$/,
+        loader: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: true,
+                modules: true,
+                importLoaders: 1,
+                minimize: {
+                  autoprefixer: {
+                    add: true,
+                    remove: true,
+                    browsers: ['last 2 versions']
+                  },
+                  discardComments: {
+                    removeAll: true
+                  },
+                  discardUnused: true,
+                  mergeIdents: false,
+                  reduceIdents: false,
+                  safe: true,
+                  sourceMap: true
+                }
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: true
+              }
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: true
+              }
+            },
+            {
+              loader: 'sass-resources-loader',
+              options: {
+                resources: [
+                  path.resolve(__dirname, '../node_modules/bootstrap/scss/_functions.scss'),
+                  path.resolve(__dirname, '../node_modules/bootstrap/scss/_variables.scss'),
+                  path.resolve(__dirname, '../node_modules/bootstrap/scss/_mixins.scss'),
+                  path.resolve(__dirname, '../src/assets/styles/variables.scss')
+                ]
+              },
+            }
+          ]
         })
       },
       ...fonts
     ]
   },
   resolve: {
-    extensions: ['.js', '.css']
+    alias: {
+      'react': path.join(__dirname, '..', 'node_modules', 'react')
+    },
+    extensions: ['.js', '.css', '.scss']
   },
   plugins: [
     new WriteFilePlugin(), // used so you can see what chunks are produced in dev
@@ -139,20 +279,6 @@ module.exports = {
         NODE_ENV: JSON.stringify('development')
       }
     }),
-    // new webpack.optimize.UglifyJsPlugin({
-    //   compress: {
-    //     screw_ie8: true,
-    //     warnings: false
-    //   },
-    //   mangle: {
-    //     screw_ie8: true
-    //   },
-    //   output: {
-    //     screw_ie8: true,
-    //     comments: false
-    //   },
-    //   sourceMap: true
-    // }),
     new AutoDllPlugin({
       context: path.join(__dirname, '..'),
       filename: '[name].js',

@@ -4,6 +4,8 @@ const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const DotenvPlugin = require('webpack-dotenv-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const multi = require('multi-loader')
+const combineLoaders = require('webpack-combine-loaders')
 
 const res = p => path.resolve(__dirname, p)
 
@@ -53,16 +55,42 @@ const fonts = []
   })
 })
 
+const fileLoaders = combineLoaders([
+  {
+    loader: 'file-loader',
+    options: {
+      name: '[name].[ext]'
+    }
+  }
+])
+
+const fileLoadersWebP = combineLoaders([
+  {
+    loader: 'file-loader',
+    options: {
+      name: '[name].webp'
+    }
+  },
+  {
+    loader: 'image-webpack-loader',
+    options: {
+      webp: {
+        quality: 50
+      }
+    }
+  }
+])
+
 module.exports = {
   name: 'server',
   target: 'node',
-  devtool: 'source-map',
   entry: ['fetch-everywhere', res('../server/render.js')],
   externals,
   output: {
     path: res('../dist'),
     filename: '[name].js',
-    libraryTarget: 'commonjs2'
+    libraryTarget: 'commonjs2',
+    publicPath: '/static/'
   },
   module: {
     rules: [
@@ -78,7 +106,14 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif)$/,
-        loader: 'url-loader?limit=200000'
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]'
+            }
+          }
+        ]
       },
       {
         test: /\.svg$/,
@@ -93,7 +128,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(sass|scss)$/,
+        test: /^((?!\.local).)*\.scss$/,
         loader: extractStyles.extract({
           fallback: 'style-loader',
           use: [
@@ -110,7 +145,7 @@ module.exports = {
                   discardComments: {
                     removeAll: true
                   },
-                  discardUnused: false,
+                  discardUnused: true,
                   mergeIdents: false,
                   reduceIdents: false,
                   safe: true,
@@ -119,10 +154,69 @@ module.exports = {
               }
             },
             {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: false
+              }
+            },
+            {
               loader: 'sass-loader',
               options: {
                 sourceMap: false
               }
+            }
+          ]
+        })
+      },
+      {
+        test: /\.local\.scss$/,
+        loader: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: false,
+                modules: true,
+                minimize: {
+                  autoprefixer: {
+                    add: true,
+                    remove: true,
+                    browsers: ['last 2 versions']
+                  },
+                  discardComments: {
+                    removeAll: true
+                  },
+                  discardUnused: true,
+                  mergeIdents: false,
+                  reduceIdents: false,
+                  safe: true,
+                  sourcemap: false
+                }
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: false
+              }
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: false
+              }
+            },
+            {
+              loader: 'sass-resources-loader',
+              options: {
+                resources: [
+                  path.resolve(__dirname, '../node_modules/bootstrap/scss/_functions.scss'),
+                  path.resolve(__dirname, '../node_modules/bootstrap/scss/_variables.scss'),
+                  path.resolve(__dirname, '../node_modules/bootstrap/scss/_mixins.scss'),
+                  path.resolve(__dirname, '../src/assets/styles/variables.scss')
+                ]
+              },
             }
           ]
         })
@@ -137,7 +231,6 @@ module.exports = {
     new webpack.optimize.LimitChunkCountPlugin({
       maxChunks: 1
     }),
-
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production')
@@ -155,7 +248,7 @@ module.exports = {
         screw_ie8: true,
         comments: false
       },
-      sourceMap: true
+      sourceMap: false
     }),
     new DotenvPlugin({
       sample: './.env.sample',

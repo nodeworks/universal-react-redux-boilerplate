@@ -9,8 +9,14 @@ import { InMemoryCache } from 'apollo-cache-inmemory'
 import { onError } from 'apollo-link-error'
 import AppContainer from 'react-hot-loader/lib/AppContainer'
 import ReduxToastr from 'react-redux-toastr'
+import { IntrospectionFragmentMatcher } from 'apollo-cache-inmemory'
+import introspectionQueryResultData from '../graphql.fragmentTypes.json'
 import App from './app'
 import configureStore from './config/configureStore'
+
+const fragmentMatcher = new IntrospectionFragmentMatcher({
+  introspectionQueryResultData
+})
 
 const httpLink = new HttpLink({
   uri: '/graphql',
@@ -19,10 +25,13 @@ const httpLink = new HttpLink({
 
 const errorLink = onError(({ operation, response, graphQLErrors, networkError }) => {
   if (graphQLErrors) {
-    graphQLErrors.map(({message, locations, path}) =>
-      console.log(
-        `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
-      )
+    graphQLErrors.map(({message, locations, path}) => {
+        console.log(
+          `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
+        )
+
+        console.log(operation)
+      }
     )
 
     if (operation.operationName === 'PassReset') {
@@ -39,12 +48,11 @@ const errorLink = onError(({ operation, response, graphQLErrors, networkError })
   }
 })
 
+const { store } = configureStore({}, window.REDUX_STATE)
 const client = new ApolloClient({
   link: errorLink.concat(httpLink),
-  cache: new InMemoryCache()
+  cache: new InMemoryCache({ fragmentMatcher }).restore(window.__APOLLO_STATE__)
 })
-
-const { store } = configureStore({}, window.REDUX_STATE)
 
 const render = App => {
   const root = document.getElementById('root')

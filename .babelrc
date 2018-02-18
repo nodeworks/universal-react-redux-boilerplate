@@ -1,9 +1,16 @@
 {
   "presets": ["env", "react", "stage-2", "flow"],
-  "plugins": ["universal-import"],
+  "plugins": [
+    ["universal-import", {
+      "disableWarnings": true
+    }]
+  ],
   "env": {
     "development": {
-      "plugins": ["react-hot-loader/babel", "transform-decorators-legacy"]
+      "plugins": [
+        "react-hot-loader/babel",
+        "transform-decorators-legacy"
+      ]
     }
   }
 }

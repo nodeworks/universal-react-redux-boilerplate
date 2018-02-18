@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="MobileOptimized" content="width" />
@@ -7,19 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title></title>
-    <link rel="shortcut icon" href="/static/favicon.ico?v=2">
-    <link rel="stylesheet prefetch" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <meta name="Description" content="React Redux Boilerplate">
+    <title><%- title %></title>
+    <link rel="shortcut icon" href="<%- favicon %>">
+    <link rel="stylesheet prefetch" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <%- helmetMeta %>
     <%- styles %>
   </head>
   <body>
     <script>window.REDUX_STATE = <%- stateJson %></script>
+    <script>window.__APOLLO_STATE__ = <%- initialStateString %></script>
     <div id="root"><div><%- appString %></div></div>
     <%- cssHash %>
     <script src="/static/js/jquery-3.2.1.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
     <script src="/static/js/tether.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
     <script type='text/javascript' src='/static/js/TweenMax.min.js'></script>
+    <script src="https://js.stripe.com/v3/"></script>
     <script type='text/javascript' src='/static/vendor.js'></script>
     <%- js %>
   </body>

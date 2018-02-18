@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import { graphql, compose } from 'react-apollo'
 import { connect } from 'react-redux'
-import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import CurrentUserQuery from '../../graphql/queries/currentuser.gql'
 import Loader from '../../components/Loader'
@@ -16,40 +15,6 @@ type Props = {
   data: any
 }
 
-const MainWrapper = ({ children }) => (
-  <div className='app'>
-    <Container fluid>
-      <Row>
-        <main className='main col-12 col-md-12'>
-          <Header />
-          <div className='content-section'>
-            <Container fluid>
-              <Row>
-                <Col xs='12'>
-                  {children}
-                </Col>
-              </Row>
-            </Container>
-          </div>
-        </main>
-      </Row>
-      <Row>
-        <Footer />
-      </Row>
-    </Container>
-  </div>
-)
-
-const LoginWrapper = ({ children }) => (
-  <Container fluid>
-    <Row className='login-page-wrap'>
-      <Col xs='12'>
-        {children}
-      </Col>
-    </Row>
-  </Container>
-)
-
 class PageLayout extends Component<Props> { // eslint-disable-line
   props: Props
 
@@ -58,23 +23,27 @@ class PageLayout extends Component<Props> { // eslint-disable-line
   }
 
   render() {
-    if (this.props.page === 'Login') {
-      return (
-        <LoginWrapper>
-          {this.props.children}
-        </LoginWrapper>
-      )
-    }
-    if (this.props.data.loading) {
-      return (
-        <Loader fullPage noOffset />
-      )
-    }
-
     return (
-      <MainWrapper>
-        {this.props.children}
-      </MainWrapper>
+      <div className='app'>
+        <Container fluid>
+          <Row>
+            <main className='main col-12 col-md-12'>
+              <div className='content-section'>
+                <Container fluid>
+                  <Row>
+                    <Col xs='12'>
+                      {this.props.children}
+                    </Col>
+                  </Row>
+                </Container>
+              </div>
+            </main>
+          </Row>
+          <Row>
+            <Footer />
+          </Row>
+        </Container>
+      </div>
     )
   }
 }

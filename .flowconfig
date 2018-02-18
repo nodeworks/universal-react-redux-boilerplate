@@ -9,6 +9,7 @@
 <PROJECT_ROOT>/node_modules/.*
 <PROJECT_ROOT>/.*/__mocks__/.*
 <PROJECT_ROOT>/.*/__tests__/.*
+<PROJECT_ROOT>/.*\.gql
 
 # Ignore Docs
 <PROJECT_ROOT>/docs/.*
@@ -30,6 +31,7 @@ esproposal.class_instance_fields=enable
 
 munge_underscores=false
 
+module.name_mapper='.*\(.gql\)' -> 'empty/object'
 module.name_mapper='.*\(.scss\)' -> 'empty/object'
 module.ignore_non_literal_requires=true
 

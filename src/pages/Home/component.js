@@ -1,6 +1,5 @@
 /* @flow */
 import React, { Component } from 'react'
-import { Helmet } from 'react-helmet'
 
 type Props = {}
 
@@ -22,10 +21,6 @@ class Home extends Component<Props, State> {
   render() {
     return (
       <div>
-        <Helmet>
-          <meta charSet='utf-8' />
-          <title>My Title</title>
-        </Helmet>
         <h1>Welcome!</h1>
       </div>
     )
