@@ -75,6 +75,8 @@
     "dot-notation": 1,
     "import/no-named-default": 1,
     "no-unused-vars": 1,
+    "react/no-unused-prop-types": 0,
+    "function-paren-newline": 0,
     "flowtype/no-weak-types": 0,
     "consistent-return": 1,
     "import/prefer-default-export": 1,

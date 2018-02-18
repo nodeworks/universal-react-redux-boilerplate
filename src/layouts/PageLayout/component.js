@@ -1,11 +1,9 @@
 /* @flow */
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap'
-import { graphql, compose } from 'react-apollo'
+import { compose } from 'react-apollo'
 import { connect } from 'react-redux'
 import Footer from '../../components/Footer'
-import CurrentUserQuery from '../../graphql/queries/currentuser.gql'
-import Loader from '../../components/Loader'
 import './styles.scss'
 
 type Props = {
@@ -17,10 +15,6 @@ type Props = {
 
 class PageLayout extends Component<Props> { // eslint-disable-line
   props: Props
-
-  componentWillUpdate(nextProps: Props) {
-    // Reroute if not logged in
-  }
 
   render() {
     return (
@@ -49,6 +43,5 @@ class PageLayout extends Component<Props> { // eslint-disable-line
 }
 
 export default compose(
-  connect(),
-  graphql(CurrentUserQuery)
+  connect()
 )(PageLayout)
