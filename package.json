@@ -28,7 +28,9 @@
     "storybook": "start-storybook -p 9001 -c .storybook",
     "build-storybook": "build-storybook",
     "schema:json": "babel-node ./server/graphql/bin/schema_to_json.js",
-    "fragments:json": "node ./server/graphql/bin/fragment_type_gen.js"
+    "fragments:json": "node ./server/graphql/bin/fragment_type_gen.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "apollo-cache-inmemory": "^1.1.7",
@@ -147,7 +149,8 @@
     "trim": "^0.0.1",
     "twilio": "^3.11.2",
     "webp-loader": "^0.2.1",
-    "webpack-flush-chunks": "^1.2.3"
+    "webpack-flush-chunks": "^1.2.3",
+    "snyk": "^1.104.2"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.3.12",
@@ -251,5 +254,6 @@
       "eslint --fix",
       "git add"
     ]
-  }
+  },
+  "snyk": true
 }
