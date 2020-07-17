@@ -69,7 +69,7 @@
     "html-react-parser": "^0.4.1",
     "jquery": "^3.3.1",
     "json-loader": "^0.5.7",
-    "lodash": "^4.17.5",
+    "lodash": "^4.17.19",
     "moment": "^2.19.4",
     "multi-loader": "^0.1.0",
     "node-env-file": "^0.1.8",
