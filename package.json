@@ -144,7 +144,7 @@
     "tether": "^1.4.3",
     "tinycon": "^0.6.8",
     "transition-group": "^0.0.2",
-    "trim": "^0.0.1",
+    "trim": "^0.0.3",
     "twilio": "^3.11.2",
     "webp-loader": "^0.2.1",
     "webpack-flush-chunks": "^1.2.3"
