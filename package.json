@@ -84,7 +84,7 @@
     "passport-oauth2": "^1.4.0",
     "passport-oauth2-password-grant": "^0.0.4",
     "passport-twitter": "^1.0.4",
-    "pm2": "^2.9.3",
+    "pm2": "^4.3.0",
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^11.1.0",
     "postcss-loader": "^2.1.0",
