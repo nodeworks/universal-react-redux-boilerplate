@@ -145,7 +145,7 @@
     "tinycon": "^0.6.8",
     "transition-group": "^0.0.2",
     "trim": "^0.0.1",
-    "twilio": "^3.11.2",
+    "twilio": "^4.0.0",
     "webp-loader": "^0.2.1",
     "webpack-flush-chunks": "^1.2.3"
   },
