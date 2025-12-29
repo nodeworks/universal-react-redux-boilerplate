@@ -45,7 +45,7 @@
     "babel-polyfill": "^6.23.0",
     "body-parser": "^1.18.2",
     "bootstrap": "4.0.0",
-    "browser-sync": "^2.23.6",
+    "browser-sync": "^2.26.14",
     "browser-sync-webpack-plugin": "^2.0.1",
     "chart.js": "^2.7.1",
     "classnames": "^2.2.5",
